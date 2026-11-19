@@ -1,0 +1,14 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/games/der-die-das/page": "app/games/der-die-das/page.js",
+  "/games/page": "app/games/page.js",
+  "/login/page": "app/login/page.js",
+  "/page": "app/page.js",
+  "/privacy/page": "app/privacy/page.js",
+  "/sentences/page": "app/sentences/page.js",
+  "/terms/page": "app/terms/page.js",
+  "/words/page": "app/words/page.js"
+}

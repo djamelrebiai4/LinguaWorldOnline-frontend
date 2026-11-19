@@ -1,0 +1,27 @@
+1:"$Sreact.fragment"
+2:"/_next/static/chunks/2r4-4169gnsgf.js"
+3:I[29528,["$2"],"Navbar"]
+4:I[39756,["$2"],"default"]
+5:I[37457,["$2"],"default"]
+c:I[97367,["$2"],"OutletBoundary"]
+d:"$Sreact.suspense"
+10:"ViewportBoundary"
+11:I[97367,["$2"],"$10"]
+12:"MetadataBoundary"
+13:I[97367,["$2"],"$12"]
+:HL["/_next/static/chunks/19r-smw35-lth.css","style"]
+7:X
+a:X
+a:C
+b:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[["$","div",null,{"className":"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12","children":[["$","h1",null,{"className":"text-2xl font-bold text-slate-900 mb-8","children":"Vocabulary"}],["$","div",null,{"className":"p-4 rounded-lg border border-amber-200 bg-amber-50 text-amber-700 mb-6","children":"Failed to fetch vocab"}],["$","div",null,{"className":"overflow-x-auto","children":["$","table",null,{"className":"w-full text-left border-collapse","children":[["$","thead",null,{"children":["$","tr",null,{"className":"border-b border-slate-200","children":[["$","th",null,{"className":"pb-3 text-left text-sm font-semibold text-slate-600","children":"German"}],["$","th",null,{"className":"pb-3 text-left text-sm font-semibold text-slate-600","children":"Article"}],["$","th",null,{"className":"pb-3 text-left text-sm font-semibold text-slate-600","children":"English"}],["$","th",null,{"className":"pb-3 text-left text-sm font-semibold text-slate-600","children":"Arabic"}],["$","th",null,{"className":"pb-3 text-left text-sm font-semibold text-slate-600","children":"World"}]]}]}],["$","tbody",null,{"className":"divide-y divide-slate-100","children":[]}]]}]}]]}],null,["$","$Lc",null,{"children":["$","$d",null,{"name":"Next.MetadataOutlet","children":"$@e"}]}]]}],"p":"$@f","v":null,"s":"$7"}}]]
+8:[["children",{"s":"words","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","template":["$","$L5",null,{}]}]]}],"p":"$@9","v":"$a","s":"$7"},"c":"$Qb"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/19r-smw35-lth.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/2r4-4169gnsgf.js","async":true}]],["$","html",null,{"lang":"en","className":"ec5Qua_variable","children":["$","body",null,{"className":"bg-white text-slate-900 antialiased","children":["$","div",null,{"className":"min-h-screen flex flex-col","children":[["$","$L3",null,{}],["$","main",null,{"className":"flex-grow","children":["$","$L4",null,{"parallelRouterKey":"children","template":["$","$L5",null,{}],"notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]]}]}],["$","footer",null,{"className":"border-t border-slate-200 bg-slate-50 mt-auto py-12","children":["$","div",null,{"className":"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8","children":["$","div",null,{"className":"flex flex-col md:flex-row justify-between items-center gap-6","children":[["$","div",null,{"className":"text-sm text-slate-500","children":["© ",2026," Lexi Explorer. All rights reserved."]}],["$","div",null,{"className":"flex items-center gap-6 text-sm text-slate-500","children":[["$","a",null,{"href":"/privacy","className":"hover:text-slate-700 transition-colors","children":"Privacy"}],["$","a",null,{"href":"/terms","className":"hover:text-slate-700 transition-colors","children":"Terms"}],["$","a",null,{"href":"/contact","className":"hover:text-slate-700 transition-colors","children":"Contact"}]]}]]}]}]}]]}]}]}]]}],"p":"$@6","v":null,"s":"$7"},"c":"$Q8"},"h":{"r":["$","$1","h",{"children":[null,["$","$L11",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L13",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$d",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Words | Lexi Explorer"}],["$","meta","1",{"name":"description","content":"German vocabulary with articles, gender, and examples."}]]}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@14","v":null,"s":"$7"}},"a":"$@15","u":"$@16","b":"X6Q8rGmtB8DVG3_ZhethH"}
+e:null
+7:300
+16:true
+7:C
+15:0
+9:"$undefined"
+6:"$undefined"
+14:"$undefined"
+f:"$undefined"

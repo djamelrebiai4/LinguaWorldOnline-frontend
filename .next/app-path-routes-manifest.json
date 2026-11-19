@@ -1,0 +1,14 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/blog/page": "/blog",
+  "/contact/page": "/contact",
+  "/games/der-die-das/page": "/games/der-die-das",
+  "/games/page": "/games",
+  "/login/page": "/login",
+  "/page": "/",
+  "/privacy/page": "/privacy",
+  "/sentences/page": "/sentences",
+  "/terms/page": "/terms",
+  "/words/page": "/words"
+}

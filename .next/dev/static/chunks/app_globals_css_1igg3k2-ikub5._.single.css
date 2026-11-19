@@ -1,0 +1,110 @@
+/* [project]/app/globals.css [app-client] (css) */
+@layer base {
+  :root {
+    --font-inter: "Inter", sans-serif;
+    --font-cairo: "Cairo", sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-inter);
+  }
+}
+
+@layer components {
+  .btn {
+    outline-offset: 2px;
+    border-radius: .5rem;
+    outline: 2px solid #0000;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem 1rem;
+    font-size: .875rem;
+    font-weight: 600;
+    transition-property: all;
+    transition-duration: .15s;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    display: inline-flex;
+  }
+
+  .btn-primary {
+    color: #fff;
+    background-color: #2563eb;
+  }
+
+  .btn-primary:hover {
+    background-color: #1d4ed8;
+  }
+
+  .btn-primary:focus-visible {
+    ring: 2px;
+    ring-color: #3b82f6;
+    ring-offset: 2px;
+  }
+
+  .btn-outline {
+    color: #334155;
+    background-color: #fff;
+    border: 1px solid #cbd5e1;
+  }
+
+  .btn-outline:hover {
+    background-color: #f8fafc;
+  }
+
+  .card {
+    background-color: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: .75rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 2px #0000000d;
+  }
+
+  .input {
+    color: #0f172a;
+    background-color: #fff;
+    border: 1px solid #cbd5e1;
+    border-radius: .5rem;
+    width: 100%;
+    padding: .5rem .75rem;
+    font-size: .875rem;
+    display: block;
+  }
+
+  .input:focus {
+    outline-offset: 2px;
+    ring: 2px;
+    ring-color: #3b82f6;
+    border-color: #3b82f6;
+    outline: 2px solid #0000;
+  }
+
+  .badge {
+    border-radius: 9999px;
+    align-items: center;
+    padding: .25rem .5rem;
+    font-size: .75rem;
+    font-weight: 600;
+    display: inline-flex;
+  }
+
+  .badge-default {
+    color: #475569;
+    background-color: #f1f5f9;
+  }
+
+  .badge-success {
+    color: #15803d;
+    background-color: #f0fdf4;
+  }
+
+  .badge-warning {
+    color: #92400e;
+    background-color: #fffbeb;
+  }
+}
+
+/*# sourceMappingURL=app_globals_css_1igg3k2-ikub5._.single.css.map*/

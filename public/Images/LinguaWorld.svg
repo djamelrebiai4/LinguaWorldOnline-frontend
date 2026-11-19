@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 96" fill="none">
+  <defs>
+    <linearGradient id="globe" x1="13" y1="8" x2="82" y2="78" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D98A5A"/>
+      <stop offset="1" stop-color="#E9B878"/>
+    </linearGradient>
+    <linearGradient id="book" x1="18" y1="47" x2="80" y2="78" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1C5B47"/>
+      <stop offset="1" stop-color="#12382F"/>
+    </linearGradient>
+  </defs>
+  <circle cx="49" cy="43" r="34" fill="#F4EBDD"/>
+  <circle cx="49" cy="40" r="25" fill="url(#globe)"/>
+  <path d="M25 42c8-2 16-1 24 4 8-5 16-6 24-4M49 46v22" stroke="#FFF9EF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+  <path d="M20 49c10-3 20-1 29 5 9-6 19-8 29-5v21c-10-3-20-1-29 5-9-6-19-8-29-5V49Z" fill="url(#book)" stroke="#12382F" stroke-linejoin="round" stroke-width="2"/>
+  <path d="M49 54v25" stroke="#F8EBD6" stroke-linecap="round" stroke-width="2"/>
+  <circle cx="70" cy="18" r="5" fill="#1C5B47"/>
+  <circle cx="18" cy="26" r="3" fill="#D98A5A"/>
+  <text x="101" y="46" fill="#173B31" font-family="Georgia, 'Times New Roman', serif" font-size="31" font-weight="700" letter-spacing="-1">LinguaWorld</text>
+  <text x="103" y="70" fill="#64736B" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="2.5">LANGUAGE THROUGH DISCOVERY</text>
+</svg>

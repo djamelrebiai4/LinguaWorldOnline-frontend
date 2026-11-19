@@ -1,0 +1,1706 @@
+{
+  "ambulance": {
+    "es": "la ambulancia",
+    "fr": "l'ambulance",
+    "de": "der Krankenwagen",
+    "it": "l'ambulanza",
+    "el": "το ασθενοφόρο",
+    "world": "City"
+  },
+  "auto repair": {
+    "es": "el taller mecánico",
+    "fr": "le garage",
+    "de": "die Autowerkstatt",
+    "it": "l'autofficina",
+    "el": "το συνεργείο αυτοκινήτων",
+    "world": "City"
+  },
+  "bank": {
+    "es": "el banco",
+    "fr": "la banque",
+    "de": "die Bank",
+    "it": "la banca",
+    "el": "η τράπεζα",
+    "world": "City"
+  },
+  "bench": {
+    "es": "el banco",
+    "fr": "le banc",
+    "de": "die Bank",
+    "it": "la panchina",
+    "el": "το παγκάκι",
+    "world": "City"
+  },
+  "bicycle": {
+    "es": "la bicicleta",
+    "fr": "le vélo",
+    "de": "das Fahrrad",
+    "it": "la bicicletta",
+    "el": "το ποδήλατο",
+    "world": "City"
+  },
+  "bookstore": {
+    "es": "la librería",
+    "fr": "la librairie",
+    "de": "die Buchhandlung",
+    "it": "la libreria",
+    "el": "το βιβλιοπωλείο",
+    "world": "City"
+  },
+  "boundary": {
+    "es": "el límite",
+    "fr": "la limite",
+    "de": "die Grenze",
+    "it": "il confine",
+    "el": "το σύνορο",
+    "world": "City"
+  },
+  "bridge": {
+    "es": "el puente",
+    "fr": "le pont",
+    "de": "die Brücke",
+    "it": "il ponte",
+    "el": "η γέφυρα",
+    "world": "City"
+  },
+  "building": {
+    "es": "el edificio",
+    "fr": "le bâtiment",
+    "de": "das Gebäude",
+    "it": "l'edificio",
+    "el": "το κτίριο",
+    "world": "City"
+  },
+  "bus": {
+    "es": "el autobús",
+    "fr": "le bus",
+    "de": "der Bus",
+    "it": "l'autobus",
+    "el": "το λεωφορείο",
+    "world": "City"
+  },
+  "bus stop": {
+    "es": "la parada de autobús",
+    "fr": "l'arrêt de bus",
+    "de": "die Bushaltestelle",
+    "it": "la fermata dell'autobus",
+    "el": "η στάση λεωφορείου",
+    "world": "City"
+  },
+  "canal": {
+    "es": "el canal",
+    "fr": "le canal",
+    "de": "der Kanal",
+    "it": "il canale",
+    "el": "το κανάλι",
+    "world": "City"
+  },
+  "car": {
+    "es": "el coche",
+    "fr": "la voiture",
+    "de": "das Auto",
+    "it": "la macchina",
+    "el": "το αυτοκίνητο",
+    "world": "City"
+  },
+  "church": {
+    "es": "la iglesia",
+    "fr": "l'église",
+    "de": "die Kirche",
+    "it": "la chiesa",
+    "el": "η εκκλησία",
+    "world": "City"
+  },
+  "cinema": {
+    "es": "el cine",
+    "fr": "le cinéma",
+    "de": "das Kino",
+    "it": "il cinema",
+    "el": "ο κινηματογράφος",
+    "world": "City"
+  },
+  "cliff": {
+    "es": "el acantilado",
+    "fr": "la falaise",
+    "de": "die Klippe",
+    "it": "la scogliera",
+    "el": "ο γκρεμός",
+    "world": "City"
+  },
+  "clothing store": {
+    "es": "la tienda de ropa",
+    "fr": "le magasin de vêtements",
+    "de": "das Bekleidungsgeschäft",
+    "it": "il negozio di abbigliamento",
+    "el": "το κατάστημα ρούχων",
+    "world": "City"
+  },
+  "coffee shop": {
+    "es": "la cafetería",
+    "fr": "le café",
+    "de": "das Café",
+    "it": "la caffetteria",
+    "el": "η καφετέρια",
+    "world": "City"
+  },
+  "drug store": {
+    "es": "la farmacia",
+    "fr": "la pharmacie",
+    "de": "die Apotheke",
+    "it": "la farmacia",
+    "el": "το φαρμακείο",
+    "world": "City"
+  },
+  "dustbin": {
+    "es": "la papelera",
+    "fr": "la poubelle",
+    "de": "der Mülleimer",
+    "it": "il cestino",
+    "el": "ο κάδος απορριμμάτων",
+    "world": "City"
+  },
+  "factory": {
+    "es": "la fábrica",
+    "fr": "l'usine",
+    "de": "die Fabrik",
+    "it": "la fabbrica",
+    "el": "το εργοστάσιο",
+    "world": "City"
+  },
+  "fire station": {
+    "es": "la estación de bomberos",
+    "fr": "la caserne de pompiers",
+    "de": "die Feuerwache",
+    "it": "la caserma dei pompieri",
+    "el": "ο πυροσβεστικός σταθμός",
+    "world": "City"
+  },
+  "fire truck": {
+    "es": "el camión de bomberos",
+    "fr": "le camion de pompiers",
+    "de": "das Feuerwehrauto",
+    "it": "il camion dei pompieri",
+    "el": "το πυροσβεστικό όχημα",
+    "world": "City"
+  },
+  "fishing boat": {
+    "es": "el barco de pesca",
+    "fr": "le bateau de pêche",
+    "de": "das Fischerboot",
+    "it": "la barca da pesca",
+    "el": "το ψαροκάικο",
+    "world": "City"
+  },
+  "football field": {
+    "es": "el campo de fútbol",
+    "fr": "le terrain de football",
+    "de": "der Fußballplatz",
+    "it": "il campo da calcio",
+    "el": "το γήπεδο ποδοσφαίρου",
+    "world": "City"
+  },
+  "fountain": {
+    "es": "la fuente",
+    "fr": "la fontaine",
+    "de": "der Brunnen",
+    "it": "la fontana",
+    "el": "το σιντριβάνι",
+    "world": "City"
+  },
+  "gas station": {
+    "es": "la gasolinera",
+    "fr": "la station-service",
+    "de": "die Tankstelle",
+    "it": "il distributore di benzina",
+    "el": "το βενζινάδικο",
+    "world": "City"
+  },
+  "grocery store": {
+    "es": "la tienda de comestibles",
+    "fr": "l'épicerie",
+    "de": "das Lebensmittelgeschäft",
+    "it": "il negozio di alimentari",
+    "el": "το παντοπωλείο",
+    "world": "City"
+  },
+  "ground": {
+    "es": "el suelo",
+    "fr": "le sol",
+    "de": "der Boden",
+    "it": "il suolo",
+    "el": "το έδαφος",
+    "world": "City"
+  },
+  "gym": {
+    "es": "el gimnasio",
+    "fr": "la salle de sport",
+    "de": "das Fitnessstudio",
+    "it": "la palestra",
+    "el": "το γυμναστήριο",
+    "world": "City"
+  },
+  "hospital": {
+    "es": "el hospital",
+    "fr": "l'hôpital",
+    "de": "das Krankenhaus",
+    "it": "l'ospedale",
+    "el": "το νοσοκομείο",
+    "world": "City"
+  },
+  "hotel": {
+    "es": "el hotel",
+    "fr": "l'hôtel",
+    "de": "das Hotel",
+    "it": "l'hotel",
+    "el": "το ξενοδοχείο",
+    "world": "City"
+  },
+  "house": {
+    "es": "la casa",
+    "fr": "la maison",
+    "de": "das Haus",
+    "it": "la casa",
+    "el": "το σπίτι",
+    "world": "City"
+  },
+  "museum": {
+    "es": "el museo",
+    "fr": "le musée",
+    "de": "das Museum",
+    "it": "il museo",
+    "el": "το μουσείο",
+    "world": "City"
+  },
+  "office": {
+    "es": "la oficina",
+    "fr": "le bureau",
+    "de": "das Büro",
+    "it": "l'ufficio",
+    "el": "το γραφείο",
+    "world": "City"
+  },
+  "park": {
+    "es": "el parque",
+    "fr": "le parc",
+    "de": "der Park",
+    "it": "il parco",
+    "el": "το πάρκο",
+    "world": "City"
+  },
+  "pine tree": {
+    "es": "el pino",
+    "fr": "le pin",
+    "de": "die Kiefer",
+    "it": "il pino",
+    "el": "το πεύκο",
+    "world": "City"
+  },
+  "police car": {
+    "es": "el coche de policía",
+    "fr": "la voiture de police",
+    "de": "das Polizeiauto",
+    "it": "l'auto della polizia",
+    "el": "το περιπολικό",
+    "world": "City"
+  },
+  "police station": {
+    "es": "la comisaría",
+    "fr": "le commissariat",
+    "de": "die Polizeiwache",
+    "it": "la stazione di polizia",
+    "el": "το αστυνομικό τμήμα",
+    "world": "City"
+  },
+  "railway station": {
+    "es": "la estación de tren",
+    "fr": "la gare",
+    "de": "der Bahnhof",
+    "it": "la stazione ferroviaria",
+    "el": "ο σιδηροδρομικός σταθμός",
+    "world": "City"
+  },
+  "restaurant": {
+    "es": "el restaurante",
+    "fr": "le restaurant",
+    "de": "das Restaurant",
+    "it": "il ristorante",
+    "el": "το εστιατόριο",
+    "world": "City"
+  },
+  "school": {
+    "es": "la escuela",
+    "fr": "l'école",
+    "de": "die Schule",
+    "it": "la scuola",
+    "el": "το σχολείο",
+    "world": "City"
+  },
+  "sea": {
+    "es": "el mar",
+    "fr": "la mer",
+    "de": "das Meer",
+    "it": "il mare",
+    "el": "η θάλασσα",
+    "world": "City"
+  },
+  "speed boat": {
+    "es": "la lancha rápida",
+    "fr": "le hors-bord",
+    "de": "das Schnellboot",
+    "it": "il motoscafo",
+    "el": "το ταχύπλοο",
+    "world": "City"
+  },
+  "street": {
+    "es": "la calle",
+    "fr": "la rue",
+    "de": "die Straße",
+    "it": "la strada",
+    "el": "ο δρόμος",
+    "world": "City"
+  },
+  "street light": {
+    "es": "la farola",
+    "fr": "le lampadaire",
+    "de": "die Straßenlaterne",
+    "it": "il lampione",
+    "el": "ο φανοστάτης",
+    "world": "City"
+  },
+  "supermarket": {
+    "es": "el supermercado",
+    "fr": "le supermarché",
+    "de": "der Supermarkt",
+    "it": "il supermercato",
+    "el": "το σούπερ μάρκετ",
+    "world": "City"
+  },
+  "swimming pool": {
+    "es": "la piscina",
+    "fr": "la piscine",
+    "de": "das Schwimmbad",
+    "it": "la piscina",
+    "el": "η πισίνα",
+    "world": "City"
+  },
+  "taxi": {
+    "es": "el taxi",
+    "fr": "le taxi",
+    "de": "das Taxi",
+    "it": "il taxi",
+    "el": "το ταξί",
+    "world": "City"
+  },
+  "tower": {
+    "es": "la torre",
+    "fr": "la tour",
+    "de": "der Turm",
+    "it": "la torre",
+    "el": "ο πύργος",
+    "world": "City"
+  },
+  "traffic light": {
+    "es": "el semáforo",
+    "fr": "le feu de circulation",
+    "de": "die Ampel",
+    "it": "il semaforo",
+    "el": "το φανάρι",
+    "world": "City"
+  },
+  "tree": {
+    "es": "el árbol",
+    "fr": "l'arbre",
+    "de": "der Baum",
+    "it": "l'albero",
+    "el": "το δέντρο",
+    "world": "City"
+  },
+  "truck": {
+    "es": "el camión",
+    "fr": "le camion",
+    "de": "der Lastwagen",
+    "it": "il camion",
+    "el": "το φορτηγό",
+    "world": "City"
+  },
+  "university": {
+    "es": "la universidad",
+    "fr": "l'université",
+    "de": "die Universität",
+    "it": "l'università",
+    "el": "το πανεπιστήμιο",
+    "world": "City"
+  },
+  "water tower": {
+    "es": "la torre de agua",
+    "fr": "le château d'eau",
+    "de": "der Wasserturm",
+    "it": "la torre dell'acqua",
+    "el": "ο υδατόπυργος",
+    "world": "City"
+  },
+  "basin": {
+    "es": "el lavabo",
+    "fr": "le lavabo",
+    "de": "das Waschbecken",
+    "it": "il lavandino",
+    "el": "ο νιπτήρας",
+    "world": "House"
+  },
+  "bathroom": {
+    "es": "el baño",
+    "fr": "la salle de bain",
+    "de": "das Badezimmer",
+    "it": "il bagno",
+    "el": "το μπάνιο",
+    "world": "House"
+  },
+  "bed": {
+    "es": "la cama",
+    "fr": "le lit",
+    "de": "das Bett",
+    "it": "il letto",
+    "el": "το κρεβάτι",
+    "world": "House"
+  },
+  "bedroom": {
+    "es": "el dormitorio",
+    "fr": "la chambre",
+    "de": "das Schlafzimmer",
+    "it": "la camera da letto",
+    "el": "το υπνοδωμάτιο",
+    "world": "House"
+  },
+  "bedside table": {
+    "es": "la mesita de noche",
+    "fr": "la table de chevet",
+    "de": "der Nachttisch",
+    "it": "il comodino",
+    "el": "το κομοδίνο",
+    "world": "House"
+  },
+  "book": {
+    "es": "el libro",
+    "fr": "le livre",
+    "de": "das Buch",
+    "it": "il libro",
+    "el": "το βιβλίο",
+    "world": "House"
+  },
+  "ceiling": {
+    "es": "el techo",
+    "fr": "le plafond",
+    "de": "die Decke",
+    "it": "il soffitto",
+    "el": "το ταβάνι",
+    "world": "House"
+  },
+  "ceiling fan": {
+    "es": "el ventilador de techo",
+    "fr": "le ventilateur de plafond",
+    "de": "der Deckenventilator",
+    "it": "il ventilatore da soffitto",
+    "el": "ο ανεμιστήρας οροφής",
+    "world": "House"
+  },
+  "chair": {
+    "es": "la silla",
+    "fr": "la chaise",
+    "de": "der Stuhl",
+    "it": "la sedia",
+    "el": "η καρέκλα",
+    "world": "House"
+  },
+  "chimney": {
+    "es": "la chimenea",
+    "fr": "la cheminée",
+    "de": "der Schornstein",
+    "it": "il camino",
+    "el": "η καμινάδα",
+    "world": "House"
+  },
+  "closet": {
+    "es": "el armario",
+    "fr": "le placard",
+    "de": "der Schrank",
+    "it": "l'armadio",
+    "el": "η ντουλάπα",
+    "world": "House"
+  },
+  "dining table": {
+    "es": "la mesa de comedor",
+    "fr": "la table à manger",
+    "de": "der Esstisch",
+    "it": "il tavolo da pranzo",
+    "el": "η τραπεζαρία",
+    "world": "House"
+  },
+  "door": {
+    "es": "la puerta",
+    "fr": "la porte",
+    "de": "die Tür",
+    "it": "la porta",
+    "el": "η πόρτα",
+    "world": "House"
+  },
+  "floor": {
+    "es": "el piso",
+    "fr": "le sol",
+    "de": "der Boden",
+    "it": "il pavimento",
+    "el": "το πάτωμα",
+    "world": "House"
+  },
+  "floor lamp": {
+    "es": "la lámpara de pie",
+    "fr": "le lampadaire",
+    "de": "die Stehlampe",
+    "it": "la lampada da terra",
+    "el": "το φωτιστικό δαπέδου",
+    "world": "House"
+  },
+  "flower plant": {
+    "es": "la planta con flores",
+    "fr": "la plante à fleurs",
+    "de": "die Blumenpflanze",
+    "it": "la pianta",
+    "el": "το φυτό με λουλούδια",
+    "world": "House"
+  },
+  "fridge": {
+    "es": "el refrigerador",
+    "fr": "le réfrigérateur",
+    "de": "der Kühlschrank",
+    "it": "il frigorifero",
+    "el": "το ψυγείο",
+    "world": "House"
+  },
+  "guest room": {
+    "es": "la habitación de invitados",
+    "fr": "la chambre d'amis",
+    "de": "das Gästezimmer",
+    "it": "la camera degli ospiti",
+    "el": "ο ξενώνας",
+    "world": "House"
+  },
+  "kitchen": {
+    "es": "la cocina",
+    "fr": "la cuisine",
+    "de": "die Küche",
+    "it": "la cucina",
+    "el": "η κουζίνα",
+    "world": "House"
+  },
+  "kitchen cabinet": {
+    "es": "el armario de cocina",
+    "fr": "l'armoire de cuisine",
+    "de": "der Küchenschrank",
+    "it": "il mobiletto della cucina",
+    "el": "το ντουλάπι κουζίνας",
+    "world": "House"
+  },
+  "kitchen counter": {
+    "es": "la encimera de cocina",
+    "fr": "le comptoir de cuisine",
+    "de": "die Küchenarbeitsplatte",
+    "it": "il piano della cucina",
+    "el": "ο πάγκος κουζίνας",
+    "world": "House"
+  },
+  "kitchen sink": {
+    "es": "el fregadero",
+    "fr": "l'évier",
+    "de": "die Küchenspüle",
+    "it": "il lavello",
+    "el": "ο νεροχύτης",
+    "world": "House"
+  },
+  "mattress": {
+    "es": "el colchón",
+    "fr": "le matelas",
+    "de": "die Matratze",
+    "it": "il materasso",
+    "el": "το στρώμα",
+    "world": "House"
+  },
+  "microwave": {
+    "es": "el microondas",
+    "fr": "le micro-ondes",
+    "de": "die Mikrowelle",
+    "it": "il microonde",
+    "el": "ο φούρνος μικροκυμάτων",
+    "world": "House"
+  },
+  "pen": {
+    "es": "el bolígrafo",
+    "fr": "le stylo",
+    "de": "der Stift",
+    "it": "la penna",
+    "el": "το στυλό",
+    "world": "House"
+  },
+  "pillow": {
+    "es": "la almohada",
+    "fr": "l'oreiller",
+    "de": "das Kissen",
+    "it": "il cuscino",
+    "el": "το μαξιλάρι",
+    "world": "House"
+  },
+  "plate": {
+    "es": "el plato",
+    "fr": "l'assiette",
+    "de": "der Teller",
+    "it": "il piatto",
+    "el": "το πιάτο",
+    "world": "House"
+  },
+  "reading table": {
+    "es": "la mesa de lectura",
+    "fr": "la table de lecture",
+    "de": "der Lesetisch",
+    "it": "il tavolo da lettura",
+    "el": "το τραπέζι μελέτης",
+    "world": "House"
+  },
+  "shower": {
+    "es": "la ducha",
+    "fr": "la douche",
+    "de": "die Dusche",
+    "it": "la doccia",
+    "el": "το ντους",
+    "world": "House"
+  },
+  "sofa": {
+    "es": "el sofá",
+    "fr": "le canapé",
+    "de": "das Sofa",
+    "it": "il divano",
+    "el": "ο καναπές",
+    "world": "House"
+  },
+  "stove": {
+    "es": "la estufa",
+    "fr": "la cuisinière",
+    "de": "der Herd",
+    "it": "il fornello",
+    "el": "η κουζίνα",
+    "world": "House"
+  },
+  "table": {
+    "es": "la mesa",
+    "fr": "la table",
+    "de": "der Tisch",
+    "it": "il tavolo",
+    "el": "το τραπέζι",
+    "world": "House"
+  },
+  "television": {
+    "es": "la televisión",
+    "fr": "la télévision",
+    "de": "der Fernseher",
+    "it": "la televisione",
+    "el": "η τηλεόραση",
+    "world": "House"
+  },
+  "toilet": {
+    "es": "el inodoro",
+    "fr": "les toilettes",
+    "de": "die Toilette",
+    "it": "il gabinetto",
+    "el": "η λεκάνη",
+    "world": "House"
+  },
+  "vase": {
+    "es": "el jarrón",
+    "fr": "le vase",
+    "de": "die Vase",
+    "it": "il vaso",
+    "el": "το βάζο",
+    "world": "House"
+  },
+  "wall clock": {
+    "es": "el reloj de pared",
+    "fr": "l'horloge murale",
+    "de": "die Wanduhr",
+    "it": "l'orologio da parete",
+    "el": "το ρολόι τοίχου",
+    "world": "House"
+  },
+  "wall": {
+    "es": "la pared",
+    "fr": "le mur",
+    "de": "die Wand",
+    "it": "il muro",
+    "el": "ο τοίχος",
+    "world": "House"
+  },
+  "washing machine": {
+    "es": "la lavadora",
+    "fr": "la machine à laver",
+    "de": "die Waschmaschine",
+    "it": "la lavatrice",
+    "el": "το πλυντήριο",
+    "world": "House"
+  },
+  "water filter": {
+    "es": "el filtro de agua",
+    "fr": "le filtre à eau",
+    "de": "der Wasserfilter",
+    "it": "il filtro dell'acqua",
+    "el": "το φίλτρο νερού",
+    "world": "House"
+  },
+  "water tap": {
+    "es": "el grifo",
+    "fr": "le robinet",
+    "de": "der Wasserhahn",
+    "it": "il rubinetto",
+    "el": "η βρύση",
+    "world": "House"
+  },
+  "window": {
+    "es": "la ventana",
+    "fr": "das Fenster",
+    "de": "das Fenster",
+    "it": "la finestra",
+    "el": "το παράθυρο",
+    "world": "House"
+  },
+  "mirror": {
+    "es": "el espejo",
+    "fr": "le miroir",
+    "de": "der Spiegel",
+    "it": "lo specchio",
+    "el": "ο καθρέφτης",
+    "world": "House"
+  },
+  "bookshelf": {
+    "es": "la estantería",
+    "fr": "l'étagère",
+    "de": "das Bücherregal",
+    "it": "la libreria",
+    "el": "η βιβλιοθήκη",
+    "world": "House"
+  },
+  "soap": {
+    "es": "el jabón",
+    "fr": "le savon",
+    "de": "die Seife",
+    "it": "il sapone",
+    "el": "το σαπούνι",
+    "world": "House"
+  },
+  "soap case": {
+    "es": "el jabonero",
+    "fr": "le porte-savon",
+    "de": "die Seifenschale",
+    "it": "il portasapone",
+    "el": "η σαπουνοθήκη",
+    "world": "House"
+  },
+  "bathtub": {
+    "es": "la bañera",
+    "fr": "la baignoire",
+    "de": "die Badewanne",
+    "it": "la vasca da bagno",
+    "el": "η μπανιέρα",
+    "world": "House"
+  },
+  "glass": {
+    "es": "el vaso",
+    "fr": "le verre",
+    "de": "das Glas",
+    "it": "il bicchiere",
+    "el": "το ποτήρι",
+    "world": "House"
+  },
+  "pan": {
+    "es": "la sartén",
+    "fr": "la poêle",
+    "de": "die Pfanne",
+    "it": "la padella",
+    "el": "το τηγάνι",
+    "world": "House"
+  },
+  "knife": {
+    "es": "el cuchillo",
+    "fr": "le couteau",
+    "de": "das Messer",
+    "it": "il coltello",
+    "el": "το μαχαίρι",
+    "world": "House"
+  },
+  "spoon": {
+    "es": "la cuchara",
+    "fr": "la cuillère",
+    "de": "der Löffel",
+    "it": "il cucchiaio",
+    "el": "το κουτάλι",
+    "world": "House"
+  },
+  "fork": {
+    "es": "el tenedor",
+    "fr": "la fourchette",
+    "de": "die Gabel",
+    "it": "la forchetta",
+    "el": "το πιρούνι",
+    "world": "House"
+  },
+  "pot": {
+    "es": "la olla",
+    "fr": "la marmite",
+    "de": "der Topf",
+    "it": "la pentola",
+    "el": "η κατσαρόλα",
+    "world": "House"
+  },
+  "switch board": {
+    "es": "el tablero de interruptores",
+    "fr": "le tableau de distribution",
+    "de": "die Schalttafel",
+    "it": "il quadro elettrico",
+    "el": "ο πίνακας διακοπτών",
+    "world": "House"
+  },
+  "black board": {
+    "es": "la pizarra",
+    "fr": "le tableau noir",
+    "de": "die Tafel",
+    "it": "la lavagna",
+    "el": "ο μαυροπίνακας",
+    "world": "Classroom"
+  },
+  "chalk": {
+    "es": "la tiza",
+    "fr": "la craie",
+    "de": "die Kreide",
+    "it": "il gesso",
+    "el": "η κιμωλία",
+    "world": "Classroom"
+  },
+  "computer": {
+    "es": "la computadora",
+    "fr": "l'ordinateur",
+    "de": "der Computer",
+    "it": "il computer",
+    "el": "ο υπολογιστής",
+    "world": "Classroom"
+  },
+  "computer mouse": {
+    "es": "el ratón de computadora",
+    "fr": "la souris d'ordinateur",
+    "de": "die Computermaus",
+    "it": "il mouse",
+    "el": "το ποντίκι υπολογιστή",
+    "world": "Classroom"
+  },
+  "computer table": {
+    "es": "la mesa de computadora",
+    "fr": "la table d'ordinateur",
+    "de": "der Computertisch",
+    "it": "il tavolo per PC",
+    "el": "το γραφείο υπολογιστή",
+    "world": "Classroom"
+  },
+  "duster": {
+    "es": "el borrador",
+    "fr": "le chiffon",
+    "de": "der Schwamm",
+    "it": "il cancellino",
+    "el": "ο σπόγγος πίνακα",
+    "world": "Classroom"
+  },
+  "eight": {
+    "es": "ocho",
+    "fr": "huit",
+    "de": "acht",
+    "it": "otto",
+    "el": "οκτώ",
+    "world": "Classroom"
+  },
+  "eraser": {
+    "es": "el borrador de lápiz",
+    "fr": "la gomme",
+    "de": "der Radiergummi",
+    "it": "la gomma",
+    "el": "η γόμα",
+    "world": "Classroom"
+  },
+  "five": {
+    "es": "cinco",
+    "fr": "cinq",
+    "de": "fünf",
+    "it": "cinque",
+    "el": "πέντε",
+    "world": "Classroom"
+  },
+  "four": {
+    "es": "cuatro",
+    "fr": "quatre",
+    "de": "vier",
+    "it": "quattro",
+    "el": "τέσσερα",
+    "world": "Classroom"
+  },
+  "keyboard": {
+    "es": "el teclado",
+    "fr": "le clavier",
+    "de": "die Tastatur",
+    "it": "la tastiera",
+    "el": "το πληκτρολόγιο",
+    "world": "Classroom"
+  },
+  "lockers": {
+    "es": "los casilleros",
+    "fr": "les casiers",
+    "de": "die Schließfächer",
+    "it": "gli armadietti",
+    "el": "τα ντουλάπια",
+    "world": "Classroom"
+  },
+  "map": {
+    "es": "el mapa",
+    "fr": "la carte",
+    "de": "die Karte",
+    "it": "la mappa",
+    "el": "ο χάρτης",
+    "world": "Classroom"
+  },
+  "monitor": {
+    "es": "el monitor",
+    "fr": "le moniteur",
+    "de": "der Monitor",
+    "it": "il monitor",
+    "el": "η οθόνη",
+    "world": "Classroom"
+  },
+  "nine": {
+    "es": "nueve",
+    "fr": "neuf",
+    "de": "neun",
+    "it": "nove",
+    "el": "εννέα",
+    "world": "Classroom"
+  },
+  "notice board": {
+    "es": "el tablón de anuncios",
+    "fr": "le panneau d'affichage",
+    "de": "das schwarze Brett",
+    "it": "la bacheca",
+    "el": "ο πίνακας ανακοινώσεων",
+    "world": "Classroom"
+  },
+  "one": {
+    "es": "uno",
+    "fr": "un",
+    "de": "eins",
+    "it": "uno",
+    "el": "ένα",
+    "world": "Classroom"
+  },
+  "paper": {
+    "es": "el papel",
+    "fr": "le papier",
+    "de": "das Papier",
+    "it": "la carta",
+    "el": "το χαρτί",
+    "world": "Classroom"
+  },
+  "pencil": {
+    "es": "el lápiz",
+    "fr": "le crayon",
+    "de": "der Bleistift",
+    "it": "la matita",
+    "el": "το μολύβι",
+    "world": "Classroom"
+  },
+  "platform": {
+    "es": "la plataforma",
+    "fr": "la plateforme",
+    "de": "das Podest",
+    "it": "la pedana",
+    "el": "η πλατφόρμα",
+    "world": "Classroom"
+  },
+  "projector": {
+    "es": "el proyector",
+    "fr": "le projecteur",
+    "de": "der Projektor",
+    "it": "il proiettore",
+    "el": "ο προβολέας",
+    "world": "Classroom"
+  },
+  "seven": {
+    "es": "siete",
+    "fr": "sept",
+    "de": "sieben",
+    "it": "sette",
+    "el": "επτά",
+    "world": "Classroom"
+  },
+  "six": {
+    "es": "seis",
+    "fr": "six",
+    "de": "sechs",
+    "it": "sei",
+    "el": "έξι",
+    "world": "Classroom"
+  },
+  "speaker": {
+    "es": "el altavoz",
+    "fr": "le haut-parleur",
+    "de": "der Lautsprecher",
+    "it": "l'altoparlante",
+    "el": "το ηχείο",
+    "world": "Classroom"
+  },
+  "stair": {
+    "es": "la escalera",
+    "fr": "l'escalier",
+    "de": "die Treppe",
+    "it": "la scala",
+    "el": "η σκάλα",
+    "world": "Classroom"
+  },
+  "student chair": {
+    "es": "la silla de estudiante",
+    "fr": "la chaise d'étudiant",
+    "de": "der Schülerstuhl",
+    "it": "la sedia dell'alunno",
+    "el": "η μαθητική καρέκλα",
+    "world": "Classroom"
+  },
+  "student desk": {
+    "es": "el escritorio de estudiante",
+    "fr": "le bureau d'étudiant",
+    "de": "der Schreibtisch",
+    "it": "il banco dell'alunno",
+    "el": "το θρανίο",
+    "world": "Classroom"
+  },
+  "teacher's podium": {
+    "es": "el podio del profesor",
+    "fr": "l'estrade du professeur",
+    "de": "das Lehrerpult",
+    "it": "la cattedra",
+    "el": "η έδρα του καθηγητή",
+    "world": "Classroom"
+  },
+  "three": {
+    "es": "tres",
+    "fr": "trois",
+    "de": "drei",
+    "it": "tre",
+    "el": "τρία",
+    "world": "Classroom"
+  },
+  "trash bin": {
+    "es": "el cubo de basura",
+    "fr": "la poubelle",
+    "de": "der Mülleimer",
+    "it": "il cestino",
+    "el": "ο κάδος απορριμμάτων",
+    "world": "Classroom"
+  },
+  "two": {
+    "es": "dos",
+    "fr": "deux",
+    "de": "zwei",
+    "it": "due",
+    "el": "δύο",
+    "world": "Classroom"
+  },
+  "zero": {
+    "es": "cero",
+    "fr": "zéro",
+    "de": "null",
+    "it": "zero",
+    "el": "μηδέν",
+    "world": "Classroom"
+  },
+  "air conditioner": {
+    "es": "el aire acondicionado",
+    "fr": "la climatisation",
+    "de": "die Klimaanlage",
+    "it": "il condizionatore",
+    "el": "το κλιματιστικό",
+    "world": "Restaurant"
+  },
+  "avocado": {
+    "es": "el aguacate",
+    "fr": "l'avocat",
+    "de": "die Avocado",
+    "it": "l'avocado",
+    "el": "το αβοκάντο",
+    "world": "Restaurant"
+  },
+  "bar": {
+    "es": "el bar",
+    "fr": "le bar",
+    "de": "die Bar",
+    "it": "il bar",
+    "el": "το μπαρ",
+    "world": "Restaurant"
+  },
+  "bar counter": {
+    "es": "la barra del bar",
+    "fr": "le comptoir du bar",
+    "de": "die Theke",
+    "it": "il bancone del bar",
+    "el": "ο πάγκος του μπαρ",
+    "world": "Restaurant"
+  },
+  "bottle": {
+    "es": "la botella",
+    "fr": "la bouteille",
+    "de": "die Flasche",
+    "it": "la bottiglia",
+    "el": "το μπουκάλι",
+    "world": "Restaurant"
+  },
+  "bowl of soup": {
+    "es": "el tazón de sopa",
+    "fr": "le bol de soupe",
+    "de": "die Schüssel Suppe",
+    "it": "la ciotola di zuppa",
+    "el": "το μπολ σούπας",
+    "world": "Restaurant"
+  },
+  "carrot": {
+    "es": "la zanahoria",
+    "fr": "la carotte",
+    "de": "die Karotte",
+    "it": "la carota",
+    "el": "το καρότο",
+    "world": "Restaurant"
+  },
+  "chicken": {
+    "es": "el pollo",
+    "fr": "le poulet",
+    "de": "das Hähnchen",
+    "it": "il pollo",
+    "el": "το κοτόπουλο",
+    "world": "Restaurant"
+  },
+  "chopper board": {
+    "es": "la tabla de cortar",
+    "fr": "la planche à découper",
+    "de": "das Schneidebrett",
+    "it": "il tagliere",
+    "el": "η σανίδα κοπής",
+    "world": "Restaurant"
+  },
+  "female": {
+    "es": "la mujer",
+    "fr": "la femme",
+    "de": "die Frau",
+    "it": "la donna",
+    "el": "η γυναίκα",
+    "world": "Restaurant"
+  },
+  "fish": {
+    "es": "el pescado",
+    "fr": "le poisson",
+    "de": "der Fisch",
+    "it": "il pesce",
+    "el": "το ψάρι",
+    "world": "Restaurant"
+  },
+  "glass of beer": {
+    "es": "el vaso de cerveza",
+    "fr": "le verre de bière",
+    "de": "das Glas Bier",
+    "it": "il bicchiere di birra",
+    "el": "το ποτήρι μπύρας",
+    "world": "Restaurant"
+  },
+  "glass of wine": {
+    "es": "la copa de vino",
+    "fr": "le verre de vin",
+    "de": "das Glas Wein",
+    "it": "il bicchiere di vino",
+    "el": "το ποτήρι κρασιού",
+    "world": "Restaurant"
+  },
+  "male": {
+    "es": "el hombre",
+    "fr": "l'homme",
+    "de": "der Mann",
+    "it": "l'uomo",
+    "el": "ο άντρας",
+    "world": "Restaurant"
+  },
+  "meat": {
+    "es": "la carne",
+    "fr": "la viande",
+    "de": "das Fleisch",
+    "it": "la carne",
+    "el": "το κρέας",
+    "world": "Restaurant"
+  },
+  "momos": {
+    "es": "los momos",
+    "fr": "les momos",
+    "de": "die Momos",
+    "it": "i ravioli",
+    "el": "τα ντάμπλινγκς",
+    "world": "Restaurant"
+  },
+  "pizza": {
+    "es": "la pizza",
+    "fr": "la pizza",
+    "de": "die Pizza",
+    "it": "la pizza",
+    "el": "η πίτσα",
+    "world": "Restaurant"
+  },
+  "reception": {
+    "es": "la recepción",
+    "fr": "la réception",
+    "de": "der Empfang",
+    "it": "la reception",
+    "el": "η ρεσεψιόν",
+    "world": "Restaurant"
+  },
+  "reception desk": {
+    "es": "el escritorio de recepción",
+    "fr": "le comptoir de réception",
+    "de": "die Rezeption",
+    "it": "il bancone della reception",
+    "el": "το γραφείο υποδοχής",
+    "world": "Restaurant"
+  },
+  "reservation book": {
+    "es": "el libro de reservas",
+    "fr": "le livre de réservations",
+    "de": "das Reservierungsbuch",
+    "it": "il libro delle prenotazioni",
+    "el": "το βιβλίο κρατήσεων",
+    "world": "Restaurant"
+  },
+  "stool": {
+    "es": "el taburete",
+    "fr": "le tabouret",
+    "de": "der Hocker",
+    "it": "lo sgabello",
+    "el": "το σκαμπό",
+    "world": "Restaurant"
+  },
+  "washroom": {
+    "es": "el baño",
+    "fr": "les toilettes",
+    "de": "der Waschraum",
+    "it": "il bagno",
+    "el": "η τουαλέτα",
+    "world": "Restaurant"
+  },
+  "apple": {
+    "es": "la manzana",
+    "fr": "la pomme",
+    "de": "der Apfel",
+    "it": "la mela",
+    "el": "το μήλο",
+    "world": "Supermarket"
+  },
+  "apple juice": {
+    "es": "el jugo de manzana",
+    "fr": "le jus de pomme",
+    "de": "der Apfelsaft",
+    "it": "il succo di mela",
+    "el": "ο χυμός μήλου",
+    "world": "Supermarket"
+  },
+  "barcode scanner": {
+    "es": "el escáner de código de barras",
+    "fr": "le lecteur de code-barres",
+    "de": "der Barcode-Scanner",
+    "it": "il lettore di codici a barre",
+    "el": "το σκάνερ γραμμωτού κώδικα",
+    "world": "Supermarket"
+  },
+  "biscuit": {
+    "es": "la galleta",
+    "fr": "le biscuit",
+    "de": "der Keks",
+    "it": "il biscotto",
+    "el": "το μπισκότο",
+    "world": "Supermarket"
+  },
+  "blueberry jam": {
+    "es": "la mermelada de arándanos",
+    "fr": "la confiture de myrtilles",
+    "de": "die Blaubeermarmelade",
+    "it": "la marmellata di mirtilli",
+    "el": "η μαρμελάδα μύρτιλο",
+    "world": "Supermarket"
+  },
+  "brown bread": {
+    "es": "el pan integral",
+    "fr": "le pain complet",
+    "de": "das Schwarzbrot",
+    "it": "il pane integrale",
+    "el": "το μαύρο ψωμί",
+    "world": "Supermarket"
+  },
+  "candy": {
+    "es": "el dulce",
+    "fr": "le bonbon",
+    "de": "die Süßigkeit",
+    "it": "la caramella",
+    "el": "η καραμέλα",
+    "world": "Supermarket"
+  },
+  "canned beans": {
+    "es": "los frijoles enlatados",
+    "fr": "les haricots en conserve",
+    "de": "die Dosenbohnen",
+    "it": "i fagioli in scatola",
+    "el": "τα φασόλια σε κονσέρβα",
+    "world": "Supermarket"
+  },
+  "canned corn": {
+    "es": "el maíz enlatado",
+    "fr": "le maïs en conserve",
+    "de": "der Dosenmais",
+    "it": "il mais in scatola",
+    "el": "το καλαμπόκι σε κονσέρβα",
+    "world": "Supermarket"
+  },
+  "canned tuna": {
+    "es": "el atún enlatado",
+    "fr": "le thon en conserve",
+    "de": "der Dosenthunfisch",
+    "it": "il tonno in scatola",
+    "el": "ο τόνος σε κονσέρβα",
+    "world": "Supermarket"
+  },
+  "card reader": {
+    "es": "el lector de tarjetas",
+    "fr": "le lecteur de cartes",
+    "de": "das Kartenlesegerät",
+    "it": "il lettore di carte",
+    "el": "το μηχάνημα καρτών",
+    "world": "Supermarket"
+  },
+  "cereal": {
+    "es": "el cereal",
+    "fr": "les céréales",
+    "de": "das Müsli",
+    "it": "i cereali",
+    "el": "τα δημητριακά",
+    "world": "Supermarket"
+  },
+  "cheese": {
+    "es": "el queso",
+    "fr": "le fromage",
+    "de": "der Käse",
+    "it": "il formaggio",
+    "el": "το τυρί",
+    "world": "Supermarket"
+  },
+  "chocolate": {
+    "es": "el chocolate",
+    "fr": "le chocolat",
+    "de": "die Schokolade",
+    "it": "il cioccolato",
+    "el": "η σοκολάτα",
+    "world": "Supermarket"
+  },
+  "cookies": {
+    "es": "las galletas",
+    "fr": "les cookies",
+    "de": "die Plätzchen",
+    "it": "i biscotti",
+    "el": "τα μπισκότα",
+    "world": "Supermarket"
+  },
+  "cooking oil": {
+    "es": "el aceite de cocina",
+    "fr": "l'huile de cuisson",
+    "de": "das Speiseöl",
+    "it": "l'olio da cucina",
+    "el": "το μαγειρικό λάδι",
+    "world": "Supermarket"
+  },
+  "crate": {
+    "es": "el cajón",
+    "fr": "la caisse",
+    "de": "die Kiste",
+    "it": "la cassa",
+    "el": "το καφάσι",
+    "world": "Supermarket"
+  },
+  "dishwashing liquid": {
+    "es": "el líquido lavavajillas",
+    "fr": "le liquide vaisselle",
+    "de": "das Spülmittel",
+    "it": "il detersivo per piatti",
+    "el": "το υγρό πιάτων",
+    "world": "Supermarket"
+  },
+  "facewash": {
+    "es": "el limpiador facial",
+    "fr": "le nettoyant pour le visage",
+    "de": "das Gesichtswasser",
+    "it": "il detergente viso",
+    "el": "το καθαριστικό προσώπου",
+    "world": "Supermarket"
+  },
+  "freezer": {
+    "es": "el congelador",
+    "fr": "le congélateur",
+    "de": "der Gefrierschrank",
+    "it": "il congelatore",
+    "el": "ο καταψύκτης",
+    "world": "Supermarket"
+  },
+  "glass cleaner": {
+    "es": "el limpiador de vidrios",
+    "fr": "le nettoyant pour vitres",
+    "de": "der Glasreiniger",
+    "it": "il lavavetri",
+    "el": "το καθαριστικό τζαμιών",
+    "world": "Supermarket"
+  },
+  "hair conditioner": {
+    "es": "el acondicionador de cabello",
+    "fr": "l'après-shampooing",
+    "de": "die Haarspülung",
+    "it": "il balsamo",
+    "el": "η μαλακτική μαλλιών",
+    "world": "Supermarket"
+  },
+  "hand wash": {
+    "es": "el jabón de manos",
+    "fr": "le savon pour les mains",
+    "de": "die Handseife",
+    "it": "il sapone per le mani",
+    "el": "το κρεμοσάπουνο",
+    "world": "Supermarket"
+  },
+  "hanger": {
+    "es": "el gancho",
+    "fr": "le cintre",
+    "de": "der Kleiderbügel",
+    "it": "la gruccia",
+    "el": "η κρεμάστρα",
+    "world": "Supermarket"
+  },
+  "honey": {
+    "es": "la miel",
+    "fr": "le miel",
+    "de": "der Honig",
+    "it": "il miele",
+    "el": "το μέλι",
+    "world": "Supermarket"
+  },
+  "mayonnaise": {
+    "es": "la mayonesa",
+    "fr": "la mayonnaise",
+    "de": "die Mayonnaise",
+    "it": "la maionese",
+    "el": "η μαγιονέζα",
+    "world": "Supermarket"
+  },
+  "milk carton": {
+    "es": "el cartón de leche",
+    "fr": "la brique de lait",
+    "de": "der Milchkarton",
+    "it": "il cartone del latte",
+    "el": "το κουτί γάλα",
+    "world": "Supermarket"
+  },
+  "noodles": {
+    "es": "los fideos",
+    "fr": "les nouilles",
+    "de": "die Nudeln",
+    "it": "i noodles",
+    "el": "τα νουντλς",
+    "world": "Supermarket"
+  },
+  "orange": {
+    "es": "la naranja",
+    "fr": "l'orange",
+    "de": "die Orange",
+    "it": "l'arancia",
+    "el": "το πορτοκάλι",
+    "world": "Supermarket"
+  },
+  "orange jam": {
+    "es": "la mermelada de naranja",
+    "fr": "la confiture d'orange",
+    "de": "die Orangenmarmelade",
+    "it": "la marmellata di arance",
+    "el": "η μαρμελάδα πορτοκάλι",
+    "world": "Supermarket"
+  },
+  "orange juice": {
+    "es": "el jugo de naranja",
+    "fr": "le jus d'orange",
+    "de": "der Orangensaft",
+    "it": "il succo d'arancia",
+    "el": "ο χυμός πορτοκάλι",
+    "world": "Supermarket"
+  },
+  "pant": {
+    "es": "el pantalón",
+    "fr": "le pantalon",
+    "de": "die Hose",
+    "it": "i pantaloni",
+    "el": "το παντελόνι",
+    "world": "Supermarket"
+  },
+  "pasta": {
+    "es": "la pasta",
+    "fr": "les pâtes",
+    "de": "die Pasta",
+    "it": "la pasta",
+    "el": "τα ζυμαρικά",
+    "world": "Supermarket"
+  },
+  "peanut butter": {
+    "es": "la mantequilla de maní",
+    "fr": "le beurre de cacahuète",
+    "de": "die Erdnussbutter",
+    "it": "il burro di arachidi",
+    "el": "το φυστικοβούτυρο",
+    "world": "Supermarket"
+  },
+  "rack": {
+    "es": "el estante",
+    "fr": "l'étagère",
+    "de": "das Regal",
+    "it": "lo scaffale",
+    "el": "το ράφι",
+    "world": "Supermarket"
+  },
+  "rice": {
+    "es": "el arroz",
+    "fr": "le riz",
+    "de": "der Reis",
+    "it": "il riso",
+    "el": "το ρύζι",
+    "world": "Supermarket"
+  },
+  "shampoo": {
+    "es": "el champú",
+    "fr": "le shampooing",
+    "de": "das Shampoo",
+    "it": "lo shampoo",
+    "el": "το σαμπουάν",
+    "world": "Supermarket"
+  },
+  "shirt": {
+    "es": "la camisa",
+    "fr": "la chemise",
+    "de": "das Hemd",
+    "it": "la camicia",
+    "el": "το πουκάμισο",
+    "world": "Supermarket"
+  },
+  "shopping cart": {
+    "es": "el carrito de compras",
+    "fr": "le chariot",
+    "de": "der Einkaufswagen",
+    "it": "il carrello della spesa",
+    "el": "το καρότσι αγορών",
+    "world": "Supermarket"
+  },
+  "soda can": {
+    "es": "la lata de refresco",
+    "fr": "la canette de soda",
+    "de": "die Getränkedose",
+    "it": "la lattina di bibita",
+    "el": "το κουτάκι αναψυκτικού",
+    "world": "Supermarket"
+  },
+  "soya sauce": {
+    "es": "la salsa de soya",
+    "fr": "la sauce soja",
+    "de": "die Sojasauce",
+    "it": "la salsa di soia",
+    "el": "η σάλτσα σόγιας",
+    "world": "Supermarket"
+  },
+  "strawberry jam": {
+    "es": "la mermelada de fresa",
+    "fr": "la confiture de fraises",
+    "de": "die Erdbeermarmelade",
+    "it": "la marmellata di fragole",
+    "el": "η μαρμελάδα φράουλα",
+    "world": "Supermarket"
+  },
+  "toilet cleaner": {
+    "es": "el limpiador de inodoro",
+    "fr": "le nettoyant pour toilettes",
+    "de": "der WC-Reiniger",
+    "it": "il detergente per WC",
+    "el": "το καθαριστικό τουαλέτας",
+    "world": "Supermarket"
+  },
+  "tomato sauce": {
+    "es": "la salsa de tomate",
+    "fr": "la sauce tomate",
+    "de": "die Tomatensoße",
+    "it": "la salsa di pomodoro",
+    "el": "η σάλτσα ντομάτας",
+    "world": "Supermarket"
+  },
+  "toothpaste": {
+    "es": "la pasta de dientes",
+    "fr": "le dentifrice",
+    "de": "die Zahnpasta",
+    "it": "il dentifricio",
+    "el": "η οδοντόκρεμα",
+    "world": "Supermarket"
+  },
+  "tshirt": {
+    "es": "la camiseta",
+    "fr": "le t-shirt",
+    "de": "das T-Shirt",
+    "it": "la maglietta",
+    "el": "το μπλουζάκι",
+    "world": "Supermarket"
+  },
+  "washing powder": {
+    "es": "el detergente en polvo",
+    "fr": "la lessive en poudre",
+    "de": "das Waschpulver",
+    "it": "il detersivo in polvere",
+    "el": "η απορρυπαντική σκόνη",
+    "world": "Supermarket"
+  },
+  "water bottle": {
+    "es": "la botella de agua",
+    "fr": "la bouteille d'eau",
+    "de": "die Wasserflasche",
+    "it": "la bottiglia d'acqua",
+    "el": "το μπουκάλι νερού",
+    "world": "Supermarket"
+  },
+  "watermelon": {
+    "es": "la sandía",
+    "fr": "la pastèque",
+    "de": "die Wassermelone",
+    "it": "l'anguria",
+    "el": "το καρπούζι",
+    "world": "Supermarket"
+  },
+  "wheat": {
+    "es": "el trigo",
+    "fr": "le blé",
+    "de": "der Weizen",
+    "it": "il grano",
+    "el": "το σιτάρι",
+    "world": "Supermarket"
+  },
+  "white bread": {
+    "es": "el pan blanco",
+    "fr": "le pain blanc",
+    "de": "das Weißbrot",
+    "it": "il pane bianco",
+    "el": "το λευκό ψωμί",
+    "world": "Supermarket"
+  }
+}

@@ -1,0 +1,1194 @@
+.lw-multiplayer-panel {
+  position: fixed;
+  z-index: 999990;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  width: min(320px, calc(100vw - 28px));
+  max-height: min(420px, 46dvh);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 12px;
+  background: rgba(248, 249, 246, 0.96);
+  box-shadow: 0 12px 36px rgba(17, 38, 31, 0.24);
+  color: #173b31;
+  font: 13px/1.4 'Nunito', 'Cairo', sans-serif;
+  backdrop-filter: blur(14px);
+}
+
+.lw-multiplayer-panel [hidden] {
+  display: none !important;
+}
+
+.lw-multiplayer-header,
+.lw-multiplayer-compose,
+.lw-multiplayer-name-row,
+.lw-multiplayer-character-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 11px;
+}
+
+.lw-multiplayer-header {
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(23, 59, 49, 0.12);
+  font-weight: 800;
+}
+
+.lw-multiplayer-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #68786f;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.lw-multiplayer-state::before {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #d98a5a;
+  content: '';
+}
+
+.lw-multiplayer-state.is-online::before {
+  background: #27835c;
+}
+
+.lw-multiplayer-name-row {
+  padding-bottom: 6px;
+}
+
+.lw-multiplayer-name-row input,
+.lw-multiplayer-character-row select,
+.lw-multiplayer-compose input,
+.lw-multiplayer-settings input {
+  min-width: 0;
+  border: 1px solid rgba(23, 59, 49, 0.2);
+  border-radius: 6px;
+  background: #fff;
+  color: #173b31;
+  padding: 7px 9px;
+  font: inherit;
+}
+
+.lw-multiplayer-name-row input {
+  flex: 1;
+}
+
+.lw-multiplayer-character-row select {
+  flex: 1;
+  cursor: pointer;
+}
+
+.lw-chat-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 2px 11px 7px;
+}
+
+.lw-multiplayer-panel .lw-chat-tabs button {
+  flex: 1;
+  border: 1px solid rgba(23, 59, 49, 0.18);
+  background: transparent;
+  color: #35564a;
+  padding: 6px 8px;
+}
+
+.lw-multiplayer-panel .lw-chat-tabs button.is-active {
+  border-color: #1c5b47;
+  background: #1c5b47;
+  color: #fff;
+}
+
+.lw-nearby-players {
+  max-height: 120px;
+  flex: none;
+  overflow: auto;
+  padding: 0 11px 7px;
+}
+
+.lw-nearby-empty {
+  padding: 8px 0;
+  color: #68786f;
+}
+
+.lw-nearby-player {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3px 0;
+  border: 1px solid rgba(23, 59, 49, 0.12) !important;
+  background: #fff !important;
+  color: #173b31 !important;
+  text-align: start;
+}
+
+.lw-nearby-player small {
+  color: #68786f;
+  font-weight: 600;
+}
+
+.lw-private-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 11px 6px;
+  color: #1c5b47;
+  font-weight: 800;
+}
+
+.lw-multiplayer-panel .lw-private-heading button {
+  background: transparent;
+  color: #1c5b47;
+  padding: 3px 6px;
+}
+
+.lw-multiplayer-messages {
+  display: flex;
+  flex: 1;
+  min-height: 70px;
+  flex-direction: column;
+  gap: 5px;
+  overflow: auto;
+  padding: 4px 11px 9px;
+  overscroll-behavior: contain;
+}
+
+.lw-multiplayer-message {
+  overflow-wrap: anywhere;
+  color: #344a40;
+}
+
+.lw-multiplayer-message strong {
+  color: #1c5b47;
+}
+
+.lw-multiplayer-compose {
+  border-top: 1px solid rgba(23, 59, 49, 0.12);
+}
+
+.lw-multiplayer-compose input {
+  flex: 1;
+}
+
+.lw-multiplayer-panel button {
+  flex: none;
+  border: 0;
+  border-radius: 6px;
+  background: #1c5b47;
+  color: #fff;
+  padding: 7px 10px;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.lw-multiplayer-panel button:hover {
+  background: #12382f;
+}
+
+.lw-multiplayer-panel .lw-voice-toggle {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: #d98a5a;
+  color: #173b31;
+  font-size: 17px;
+}
+
+.lw-multiplayer-panel .lw-voice-toggle.is-active {
+  background: #b83c3c;
+  color: #fff;
+}
+
+.lw-multiplayer-settings {
+  border-top: 1px solid rgba(23, 59, 49, 0.1);
+  padding: 5px 11px 9px;
+  color: #68786f;
+  font-size: 11px;
+}
+
+.lw-multiplayer-settings summary {
+  cursor: pointer;
+}
+
+.lw-multiplayer-settings form {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.lw-multiplayer-settings input {
+  flex: 1;
+  font-size: 11px;
+}
+
+.lw-remote-name {
+  position: fixed;
+  z-index: 999980;
+  padding: 3px 7px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  background: rgba(18, 56, 47, 0.88);
+  color: #fff;
+  font: 700 11px/1.2 'Nunito', 'Cairo', sans-serif;
+  pointer-events: none;
+  white-space: nowrap;
+  transform: translate(-50%, -100%);
+}
+
+@media (max-width: 640px) {
+  .lw-multiplayer-panel {
+    right: 10px;
+    bottom: 10px;
+    width: min(290px, calc(100vw - 20px));
+    max-height: 38dvh;
+  }
+}
+/* ============================================================
+   Mehrspieler-Spiele (Deutsch)
+   ============================================================ */
+.lw-game-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 999990;
+  pointer-events: none;
+  font-family: 'Nunito', 'Cairo', sans-serif;
+  color: #173b31;
+}
+
+.lw-game-layer [hidden],
+.lw-game-layer .lw-empty {
+  display: none !important;
+}
+
+.lw-game-launcher {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+  padding: 10px 15px;
+  background: #1c5b47;
+  color: #fff;
+  font: 800 13px/1 'Nunito', sans-serif;
+  box-shadow: 0 10px 28px rgba(8, 34, 27, 0.28);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.lw-game-launcher:hover,
+.lw-game-launcher:focus-visible {
+  background: #12382f;
+  outline: 2px solid #fbbf24;
+  outline-offset: 2px;
+}
+
+.lw-game-launcher span[aria-hidden] {
+  font-size: 16px;
+}
+
+.lw-mp-hud {
+  position: fixed;
+  top: 14px;
+  left: 50%;
+  width: min(440px, calc(100vw - 190px));
+  transform: translateX(-50%);
+  padding: 11px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 14px;
+  background: rgba(16, 54, 45, 0.92);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(4, 24, 19, 0.3);
+  pointer-events: none;
+}
+
+.lw-hud-mode {
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+}
+
+.lw-hud-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.lw-hud-role.is-it,
+.lw-hud-role.is-seeker {
+  color: #ffb4a4;
+}
+
+.lw-hud-role.is-hider,
+.lw-hud-role.is-runner {
+  color: #b9f0d2;
+}
+
+.lw-hud-timer {
+  font-variant-numeric: tabular-nums;
+  font-size: 15px;
+  color: #ffe39a;
+}
+
+.lw-hud-progress {
+  overflow: hidden;
+  height: 5px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.lw-hud-progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: #f2b84b;
+  transition: width 180ms ease;
+}
+
+.lw-game-scoreboard {
+  position: fixed;
+  top: 50%;
+  right: 12px;
+  width: 190px;
+  max-height: 44dvh;
+  overflow: auto;
+  padding: 12px;
+  border: 1px solid rgba(23, 59, 49, 0.12);
+  border-radius: 14px;
+  background: rgba(247, 252, 249, 0.95);
+  box-shadow: 0 12px 30px rgba(15, 55, 44, 0.16);
+  transform: translateY(-50%);
+  pointer-events: auto;
+}
+
+.lw-game-scoreboard h3,
+.lw-coop-quest header {
+  margin: 0 0 8px;
+  color: #1c5b47;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.lw-game-scoreboard ol,
+.lw-coop-quest ul,
+.lw-game-player-list,
+.lw-leaderboard-list,
+.lw-game-end-list {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lw-game-scoreboard li,
+.lw-leaderboard-list li,
+.lw-game-end-list li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 6px;
+  border-radius: 7px;
+  background: rgba(28, 91, 71, 0.06);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.lw-game-scoreboard li[data-role="it"],
+.lw-game-scoreboard li[data-role="seeker"] {
+  background: rgba(184, 60, 60, 0.14);
+}
+
+.lw-score-rank {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #d9e9e2;
+  color: #173b31;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.lw-score-name {
+  overflow: hidden;
+  flex: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lw-score-points,
+.lw-game-scoreboard li b {
+  color: #17684d;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.lw-coop-quest {
+  position: fixed;
+  top: 50%;
+  left: 12px;
+  width: 210px;
+  padding: 12px;
+  border: 1px solid rgba(23, 59, 49, 0.12);
+  border-radius: 14px;
+  background: rgba(247, 252, 249, 0.95);
+  box-shadow: 0 12px 30px rgba(15, 55, 44, 0.16);
+  transform: translateY(-50%);
+  pointer-events: auto;
+}
+
+.lw-coop-eyebrow {
+  display: block;
+  margin-bottom: 3px;
+  color: #68857a;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lw-coop-title {
+  display: block;
+  color: #173b31;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+.lw-coop-progress {
+  height: 5px;
+  margin: 8px 0;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #dbe9e3;
+}
+
+.lw-coop-progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: #4aa382;
+  transition: width 180ms ease;
+}
+
+.lw-coop-quest li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 0;
+  color: #3f5c51;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.lw-coop-quest li.is-done {
+  color: #17684d;
+  text-decoration: line-through;
+}
+
+.lw-coop-check {
+  flex: none;
+  width: 13px;
+  color: #4aa382;
+  font-weight: 900;
+}
+
+.lw-coop-word {
+  flex: 1;
+}
+
+.lw-coop-quest small {
+  color: #849a90;
+  font-size: 9px;
+}
+
+.lw-coop-quest.is-complete {
+  border-color: rgba(74, 163, 130, 0.5);
+  background: #eefaf4;
+}
+
+.lw-emote-wheel {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  width: min(430px, calc(100vw - 30px));
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 16px;
+  background: rgba(16, 54, 45, 0.95);
+  color: #fff;
+  box-shadow: 0 16px 40px rgba(4, 24, 19, 0.35);
+  transform: translateX(-50%);
+  pointer-events: auto;
+}
+
+.lw-emote-wheel > p {
+  margin: 0 0 8px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 11px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.lw-emote-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+}
+
+.lw-emote-button {
+  position: relative;
+  display: grid;
+  gap: 2px;
+  place-items: center;
+  min-height: 58px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  padding: 6px 3px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font: 800 10px/1.1 'Nunito', sans-serif;
+  cursor: pointer;
+}
+
+.lw-emote-button:hover,
+.lw-emote-button:focus-visible {
+  background: rgba(255, 255, 255, 0.18);
+  outline: 2px solid #fbbf24;
+  outline-offset: 1px;
+}
+
+.lw-emote-button span {
+  font-size: 22px;
+}
+
+.lw-emote-button small {
+  position: absolute;
+  top: 4px;
+  right: 5px;
+  color: #ffe39a;
+  font-size: 8px;
+}
+
+.lw-game-overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(7, 27, 22, 0.66);
+  backdrop-filter: blur(6px);
+  pointer-events: auto;
+}
+
+.lw-game-card {
+  width: min(100%, 640px);
+  max-height: min(88dvh, 760px);
+  overflow: auto;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  background: #f8fcfa;
+  color: #173b31;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.4);
+}
+
+.lw-game-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.lw-game-eyebrow {
+  margin: 0 0 3px;
+  color: #68857a;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.lw-game-card h2 {
+  margin: 0;
+  color: #12382f;
+  font-size: 24px;
+  line-height: 1.1;
+}
+
+.lw-game-close,
+.lw-game-close-end {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: #e6f0eb;
+  color: #173b31;
+  font: 800 21px/1 sans-serif;
+  cursor: pointer;
+}
+
+.lw-game-connection {
+  margin: 10px 0 14px;
+  color: #a05b36;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.lw-game-connection.is-online {
+  color: #17684d;
+}
+
+.lw-game-modes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.lw-game-modes button {
+  display: grid;
+  gap: 3px;
+  border: 1px solid #cfe2d8;
+  border-radius: 11px;
+  padding: 11px 12px;
+  background: #fff;
+  color: #173b31;
+  text-align: left;
+  cursor: pointer;
+}
+
+.lw-game-modes button:hover:not(:disabled),
+.lw-game-modes button:focus-visible:not(:disabled) {
+  border-color: #4aa382;
+  background: #eefaf4;
+  outline: 2px solid #fbbf24;
+  outline-offset: 1px;
+}
+
+.lw-game-modes button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.lw-game-modes b {
+  color: #12382f;
+  font-size: 13px;
+}
+
+.lw-game-modes span {
+  color: #68857a;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.lw-game-hint {
+  margin: 10px 0 0;
+  color: #a05b36;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.lw-game-menu-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 13px 0;
+}
+
+.lw-game-menu-actions button,
+.lw-game-end-actions button,
+.lw-leaderboard-controls button {
+  border: 0;
+  border-radius: 8px;
+  padding: 9px 12px;
+  background: #1c5b47;
+  color: #fff;
+  font: 800 11px/1 'Nunito', sans-serif;
+  cursor: pointer;
+}
+
+.lw-game-menu-actions button:hover,
+.lw-game-end-actions button:hover,
+.lw-leaderboard-controls button:hover {
+  background: #12382f;
+}
+
+.lw-game-menu-actions button:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+}
+
+.lw-game-ready.is-ready {
+  background: #b86a2a;
+}
+
+.lw-game-menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.lw-game-menu-block {
+  padding: 12px;
+  border: 1px solid #dbe9e3;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.lw-game-menu-block h3 {
+  margin: 0 0 9px;
+  color: #1c5b47;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.lw-game-menu-block h3 small {
+  color: #849a90;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.lw-game-player-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 5px 0;
+  border-bottom: 1px solid #eef5f1;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.lw-game-player-list li:last-child {
+  border-bottom: 0;
+}
+
+.lw-game-player-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lw-game-player-name small {
+  color: #849a90;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.lw-game-player-status {
+  flex: none;
+  color: #a05b36;
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.lw-game-player-status.is-ready {
+  color: #17684d;
+}
+
+.lw-world-presets {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+}
+
+.lw-world-presets button {
+  border: 1px solid #cfe2d8;
+  border-radius: 7px;
+  padding: 6px;
+  background: #f4faf7;
+  color: #173b31;
+  font: 800 10px/1 'Nunito', sans-serif;
+  cursor: pointer;
+}
+
+.lw-world-presets button:hover:not(:disabled) {
+  background: #e2f4eb;
+}
+
+.lw-world-presets button:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+}
+
+.lw-world-weather {
+  display: grid;
+  gap: 4px;
+  margin-top: 8px;
+  color: #68857a;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.lw-world-weather select,
+.lw-leaderboard-controls select {
+  min-height: 30px;
+  border: 1px solid #cfe2d8;
+  border-radius: 7px;
+  padding: 0 7px;
+  background: #fff;
+  color: #173b31;
+  font: 700 10px 'Nunito', sans-serif;
+}
+
+.lw-leaderboard {
+  margin-top: 13px;
+}
+
+.lw-leaderboard-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.lw-leaderboard-controls {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.lw-leaderboard-controls button {
+  padding: 6px 8px;
+  background: #e6f0eb;
+  color: #173b31;
+  font-size: 9px;
+}
+
+.lw-leaderboard-controls button.is-active {
+  background: #1c5b47;
+  color: #fff;
+}
+
+.lw-leaderboard-list {
+  max-height: 150px;
+  overflow: auto;
+  margin-top: 7px;
+}
+
+.lw-quiz-card {
+  width: min(100%, 560px);
+  text-align: center;
+}
+
+.lw-quiz-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  color: #68857a;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.lw-quiz-timer {
+  color: #b86a2a;
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+}
+
+.lw-quiz-question {
+  margin: 0 0 16px;
+  color: #12382f;
+  font-size: 21px;
+  line-height: 1.25;
+}
+
+.lw-quiz-options {
+  display: grid;
+  gap: 8px;
+}
+
+.lw-quiz-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #cfe2d8;
+  border-radius: 10px;
+  padding: 11px 13px;
+  background: #fff;
+  color: #173b31;
+  font: 800 14px/1.25 'Nunito', sans-serif;
+  text-align: left;
+  cursor: pointer;
+}
+
+.lw-quiz-option:hover:not(:disabled),
+.lw-quiz-option:focus-visible {
+  border-color: #4aa382;
+  background: #eefaf4;
+  outline: 2px solid #fbbf24;
+  outline-offset: 1px;
+}
+
+.lw-quiz-option kbd {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: #e6f0eb;
+  color: #1c5b47;
+  font: 900 10px/1 'Nunito', sans-serif;
+}
+
+.lw-quiz-option.is-selected {
+  border-color: #4aa382;
+  background: #eefaf4;
+}
+
+.lw-quiz-option.is-correct {
+  border-color: #2f8f66;
+  background: #d9f5e7;
+  color: #105b3c;
+}
+
+.lw-quiz-option.is-wrong {
+  border-color: #b83c3c;
+  background: #fbe3e3;
+  color: #7a1f1f;
+}
+
+.lw-quiz-feedback {
+  min-height: 18px;
+  margin: 12px 0 0;
+  color: #68857a;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.lw-quiz-feedback.is-correct {
+  color: #17684d;
+}
+
+.lw-game-end-card {
+  width: min(100%, 500px);
+  text-align: center;
+}
+
+.lw-game-winner {
+  margin: 8px 0 14px;
+  color: #17684d;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.lw-game-end-list {
+  max-height: 240px;
+  overflow: auto;
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+.lw-game-end-list li.is-winner {
+  background: #dff5e8;
+}
+
+.lw-game-end-actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.lw-game-toast {
+  position: fixed;
+  bottom: 96px;
+  left: 50%;
+  max-width: min(90vw, 460px);
+  padding: 10px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  background: rgba(16, 54, 45, 0.95);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
+  box-shadow: 0 10px 28px rgba(4, 24, 19, 0.3);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.lw-remote-name.is-it,
+.lw-remote-name.is-seeker {
+  border-color: rgba(255, 150, 130, 0.9);
+  background: rgba(122, 31, 31, 0.92);
+}
+
+.lw-remote-name.is-speaking {
+  border-color: #8df0b8;
+  box-shadow: 0 0 0 2px rgba(74, 216, 145, 0.4);
+}
+
+.lw-remote-name .lw-remote-emote {
+  margin-left: 4px;
+}
+
+@media (max-width: 760px) {
+  .lw-mp-hud {
+    top: 8px;
+    width: calc(100vw - 110px);
+    padding: 8px 10px;
+  }
+
+  .lw-game-launcher {
+    top: 8px;
+    right: 8px;
+    padding: 9px 11px;
+    font-size: 11px;
+  }
+
+  .lw-game-launcher span:not([aria-hidden]) {
+    display: none;
+  }
+
+  .lw-game-scoreboard {
+    top: auto;
+    right: 8px;
+    bottom: 8px;
+    width: 150px;
+    max-height: 28dvh;
+    transform: none;
+  }
+
+  .lw-coop-quest {
+    top: auto;
+    left: 8px;
+    bottom: 8px;
+    width: 165px;
+    max-height: 30dvh;
+    overflow: auto;
+    transform: none;
+  }
+
+  .lw-game-modes,
+  .lw-game-menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lw-game-card {
+    padding: 16px;
+  }
+
+  .lw-game-card h2 {
+    font-size: 20px;
+  }
+
+  .lw-emote-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .lw-emote-wheel {
+    bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lw-mp-hud {
+    width: calc(100vw - 92px);
+  }
+
+  .lw-hud-mode {
+    font-size: 12px;
+  }
+
+  .lw-hud-meta {
+    font-size: 10px;
+  }
+
+  .lw-game-overlay {
+    padding: 10px;
+    align-items: end;
+  }
+
+  .lw-game-card {
+    max-height: 82dvh;
+    border-radius: 16px 16px 12px 12px;
+  }
+}
+
+.lw-remote-name-text {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+.lw-remote-role {
+  display: inline-block;
+  margin-left: 4px;
+  border-radius: 999px;
+  padding: 1px 5px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffe39a;
+  font-size: 8px;
+  font-weight: 900;
+  vertical-align: middle;
+}
+
+.lw-remote-emote {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+.lw-hunt-word {
+  position: fixed;
+  z-index: 999979;
+  padding: 4px 8px;
+  border: 1px solid rgba(255, 224, 154, 0.75);
+  border-radius: 999px;
+  background: rgba(18, 56, 47, 0.92);
+  color: #ffe39a;
+  font: 900 12px/1.15 'Nunito', 'Cairo', sans-serif;
+  pointer-events: none;
+  white-space: nowrap;
+  transform: translate(-50%, -100%);
+  box-shadow: 0 6px 18px rgba(7, 27, 22, 0.28);
+}
+
+.lw-ptt-toggle {
+  flex: none;
+  border: 1px solid rgba(28, 91, 71, 0.22);
+  border-radius: 7px;
+  padding: 6px 8px;
+  background: #e6f0eb;
+  color: #1c5b47;
+  font: 900 9px/1 'Nunito', sans-serif;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.lw-ptt-toggle:hover,
+.lw-ptt-toggle:focus-visible {
+  background: #d4e8de;
+  outline: 2px solid #fbbf24;
+  outline-offset: 1px;
+}
+
+.lw-ptt-toggle.is-active {
+  background: #b83c3c;
+  color: #fff;
+}

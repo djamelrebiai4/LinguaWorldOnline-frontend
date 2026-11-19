@@ -1,0 +1,3 @@
+module.exports=[12466,a=>{"use strict";var b=a.i(87924);a.s(["f",0,function({children:a,className:c="",variant:d="primary",...e}){return(0,b.jsx)("button",{className:`inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ${{primary:"bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500",outline:"border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 focus:ring-blue-500"}[d]} ${c}`,...e,children:a})}])}];
+
+//# sourceMappingURL=components_ui_Button_tsx_0cp2cq72k81__._.js.map

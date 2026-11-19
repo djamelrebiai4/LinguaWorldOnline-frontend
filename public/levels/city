@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Favicon: The small icon shown in browser tabs and bookmarks -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/x-icon" href="/Images/Icon.ico" />
+
+    <!-- Viewport: Makes the site responsive on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <!-- ============================================
+         SEO CORE
+         Basic tags that Google reads to understand
+         and rank your page in search results
+    ============================================ -->
+
+    <!-- Page title shown in Google search results (keep under 60 chars) -->
+    <title>Learn Languages Free Online | Interactive Language Learning</title>
+
+    <!-- Short summary shown under the title in Google results (keep under 160 chars) -->
+    <meta
+      name="description"
+      content="Learn languages free online with interactive vocabulary tools, sentence practice, pronunciation audio, and mini-games. Build real language skills naturally. No login required."
+    />
+
+    <!-- Tells Google to index this page and follow its links -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- Proves site ownership to Google Search Console -->
+    <meta name="google-site-verification" content="j2YyxzHsnYPp9KUXOWbT_J6Sa5ofANWddMimUTnShdQ" />
+
+    <!-- Canonical URL: Tells Google this is the main/official URL to avoid duplicate content issues -->
+    <link rel="canonical" href="https://lexiexplorer.com/" />
+
+    <!-- ============================================
+         OPEN GRAPH (SOCIAL SHARING)
+         Controls how your link looks when shared
+         on Facebook, WhatsApp, and LinkedIn
+    ============================================ -->
+
+    <!-- Title shown in the social share card -->
+    <meta
+      property="og:title"
+      content="Learn Languages Free Online | Interactive Language Learning"
+    />
+
+    <!-- Description shown in the social share card -->
+    <meta
+      property="og:description"
+      content="Learn languages free online with interactive vocabulary tools, sentence practice, pronunciation audio, and mini-games. Build real language skills naturally. No login required."
+    />
+
+    <!-- Type of content (website, article, video, etc.) -->
+    <meta property="og:type" content="website" />
+
+    <!-- The canonical URL of this page -->
+    <meta property="og:url" content="https://lexiexplorer.com/" />
+
+    <!-- Your site's display name on social platforms -->
+    <meta property="og:site_name" content="Lexi Explorer" />
+
+    <!-- Preview image shown in social share cards (must be 1200x630px) -->
+    <meta property="og:image" content="https://lexiexplorer.com/Images/1200x630.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Lexi Explorer - Interactive Language Learning" />
+
+    <!-- ============================================
+         TWITTER CARD
+         Controls how your link looks when shared
+         on X (formerly Twitter)
+    ============================================ -->
+
+    <!-- summary_large_image = wide banner preview (vs small thumbnail) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Learn Languages Free Online | Interactive Language Learning" />
+    <meta name="twitter:description" content="Learn languages free online with interactive vocabulary tools, sentence practice, pronunciation audio, and mini-games. Build real language skills naturally. No login required." />
+    <meta name="twitter:image" content="https://lexiexplorer.com/Images/1200x630.webp" />
+
+    <!-- ============================================
+         FONT OPTIMIZATION
+         Loads Google Fonts without blocking
+         the page from rendering
+    ============================================ -->
+
+    <!-- Early connection to Google Fonts servers to speed up font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preloads the font stylesheet so it's ready faster -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap"
+    />
+
+    <!-- Loads font asynchronously (media="print" trick prevents render blocking) -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <!-- Fallback: loads font normally if JavaScript is disabled -->
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap"
+      />
+    </noscript>
+
+    <!-- Google Analytics: Tracks user interactions and traffic (replace with your own GA ID) -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-45RL8QBZNT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-45RL8QBZNT');
+    </script>
+
+    <!-- ============================================
+         THIRD PARTY SCRIPTS
+    ============================================ -->
+
+    <!-- Not using anymore -->
+    <!-- ResponsiveVoice: Text-to-speech library for pronunciation audio -->
+    <!-- <script src="https://code.responsivevoice.org/responsivevoice.js?key=i0xHlgRy"></script> -->
+
+    <!-- ============================================
+         STRUCTURED DATA (JSON-LD)
+         Helps Google deeply understand your site.
+         Can unlock rich results in search listings.
+    ============================================ -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalApplication",
+      "name": "Lexi Explorer",
+      "url": "https://lexiexplorer.com/",
+      "description": "Learn languages free online with interactive vocabulary tools, sentence practice, pronunciation audio, and mini-games. Build real language skills naturally. No login required.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "inLanguage": ["es", "fr", "de", "it"],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Interactive vocabulary tools",
+        "Sentence practice",
+        "Pronunciation audio",
+        "Mini-games",
+        "No login required"
+      ]
+    }
+    </script>
+
+    <!-- Sitemap reference: lets crawlers automatically discover your sitemap -->
+    <!-- <link rel="sitemap" type="application/xml" href="/sitemap.xml" /> -->
+    <script type="module" crossorigin src="/assets/index-C2Y9NDyy.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/three-vendor-BrF7bqo1.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-D7Dw_-Cd.css">
+  </head>
+
+  <body>
+    <!-- SEO fallback: visible text for search engines before React loads -->
+    <div id="root">
+      Learn languages free online with interactive vocabulary tools, sentence
+      practice, pronunciation audio, and mini-games. Build real communication
+      skills naturally with Lexi Explorer.
+    </div>
+
+    <!-- React entry point: mounts the entire app into #root above -->
+  </body>
+</html>

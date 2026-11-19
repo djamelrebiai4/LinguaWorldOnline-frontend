@@ -1,0 +1,100 @@
+@layer base {
+  :root {
+    --font-inter: 'Inter', sans-serif;
+    --font-cairo: 'Cairo', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-inter);
+  }
+}
+
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+
+  .btn-primary {
+    background-color: #2563eb;
+    color: #ffffff;
+  }
+  .btn-primary:hover {
+    background-color: #1d4ed8;
+  }
+  .btn-primary:focus-visible {
+    ring: 2px;
+    ring-color: #3b82f6;
+    ring-offset: 2px;
+  }
+
+  .btn-outline {
+    border: 1px solid #cbd5e1;
+    background-color: #ffffff;
+    color: #334155;
+  }
+  .btn-outline:hover {
+    background-color: #f8fafc;
+  }
+
+  .card {
+    border-radius: 0.75rem;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    border: 1px solid #e2e8f0;
+  }
+
+  .input {
+    display: block;
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid #cbd5e1;
+    background-color: #ffffff;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    color: #0f172a;
+  }
+  .input:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    ring: 2px;
+    ring-color: #3b82f6;
+    border-color: #3b82f6;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  .badge-default {
+    background-color: #f1f5f9;
+    color: #475569;
+  }
+  .badge-success {
+    background-color: #f0fdf4;
+    color: #15803d;
+  }
+  .badge-warning {
+    background-color: #fffbeb;
+    color: #92400e;
+  }
+}

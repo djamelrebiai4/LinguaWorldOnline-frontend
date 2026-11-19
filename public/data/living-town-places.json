@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "units": "meters",
+  "weekday_index": { "monday": 0, "tuesday": 1, "wednesday": 2, "thursday": 3, "friday": 4, "saturday": 5, "sunday": 6 },
+  "source_assets": {
+    "city_layout": "scripts/generate_city.py",
+    "interior_models": ["Grounds/House.glb", "Grounds/Classroom.glb", "Grounds/Restaurant.glb", "Grounds/Supermarket.glb"],
+    "collision_models": ["Grounds/House_Collision.glb", "Grounds/Classroom_Collision.glb", "Grounds/Restaurant_Collision.glb", "Grounds/Supermarket_Collision.glb"]
+  },
+  "places": [
+    {
+      "id": "town-park",
+      "place_type": "park",
+      "world_level": 1,
+      "status": "positions_verified",
+      "position": { "x": -170, "z": 130 },
+      "bounds": { "min_x": -201, "max_x": -139, "min_z": 105, "max_z": 155 },
+      "opening_hours": { "open_minute": 240, "close_minute": 1380 },
+      "closed_days": [],
+      "roles": { "staff": [], "visitors": ["jogger", "retiree", "parent_with_child", "dog_walker", "cyclist", "student"] },
+      "slots": [
+        { "id": "bench-park-west", "kind": "bench", "role": "visitor_seat", "position": { "x": -166, "y": 0, "z": 142 }, "rotation_y": 1.5708, "capacity": 1, "source": "scripts/generate_city.py:688" },
+        { "id": "bench-park-north", "kind": "bench", "role": "visitor_seat", "position": { "x": -183, "y": 0, "z": 146 }, "rotation_y": 0, "capacity": 1, "source": "scripts/generate_city.py:689" }
+      ],
+      "scripts": {
+        "sit_and_rest": [
+          { "state": "walk_to_slot", "duration_minutes": 1, "role": "visitor", "animation": "Walking_A" },
+          { "state": "sit_rest", "duration_minutes": 12, "role": "visitor", "animation": "Idle_A", "effects": { "energy_per_minute": 0.12, "fun_per_minute": -0.08 } },
+          { "state": "leave", "duration_minutes": 1, "role": "visitor", "animation": "Walking_A" }
+        ],
+        "jog": [
+          { "state": "jog_loop", "duration_minutes": 18, "role": "visitor", "animation": "Walking_A", "weather_sensitive": true }
+        ]
+      }
+    },
+    {
+      "id": "city-school",
+      "place_type": "school",
+      "world_level": 1,
+      "status": "verified_exterior_entrance",
+      "position": { "x": -131, "z": 247 },
+      "footprint": { "width": 42, "depth": 34 },
+      "entrance": { "x": -131, "z": 264.13, "front": "north", "source": "scripts/generate_city.py:396-438" },
+      "opening_hours": { "open_minute": 420, "close_minute": 1020 },
+      "closed_days": [5, 6],
+      "roles": { "staff": ["teacher"], "visitors": ["student", "parent_with_child"] },
+      "slots": [
+        { "id": "school-front-door", "kind": "doorway", "role": "entrance", "position": { "x": -131, "y": 0, "z": 264.13 }, "capacity": 1, "source": "scripts/generate_city.py:396-438" }
+      ],
+      "scripts": {}
+    },
+    {
+      "id": "city-supermarket",
+      "place_type": "supermarket",
+      "world_level": 1,
+      "status": "verified_exterior_entrance",
+      "position": { "x": 83, "z": 244 },
+      "footprint": { "width": 46, "depth": 48 },
+      "entrance": { "x": 83, "z": 268.13, "front": "north", "source": "scripts/generate_city.py:396-438" },
+      "opening_hours": { "open_minute": 420, "close_minute": 1260 },
+      "closed_days": [6],
+      "roles": { "staff": ["shop_owner", "cashier"], "visitors": ["student", "retiree", "parent_with_child", "office_worker", "tourist"] },
+      "slots": [
+        { "id": "market-front-door", "kind": "doorway", "role": "entrance", "position": { "x": 83, "y": 0, "z": 268.13 }, "capacity": 1, "source": "scripts/generate_city.py:396-438" }
+      ],
+      "scripts": {}
+    },
+    {
+      "id": "city-cafe",
+      "place_type": "cafe",
+      "world_level": 1,
+      "status": "verified_exterior_entrance",
+      "position": { "x": 99, "z": 145 },
+      "footprint": { "width": 32, "depth": 30 },
+      "entrance": { "x": 99, "z": 160.13, "front": "north", "source": "scripts/generate_city.py:396-438" },
+      "opening_hours": { "open_minute": 360, "close_minute": 1320 },
+      "closed_days": [],
+      "roles": { "staff": ["barista"], "visitors": ["office_worker", "retiree", "tourist", "artist_musician", "student"] },
+      "slots": [
+        { "id": "cafe-front-door", "kind": "doorway", "role": "entrance", "position": { "x": 99, "y": 0, "z": 160.13 }, "capacity": 1, "source": "scripts/generate_city.py:396-438" }
+      ],
+      "scripts": {}
+    },
+    {
+      "id": "city-house",
+      "place_type": "home",
+      "world_level": 1,
+      "status": "verified_exterior_entrance",
+      "position": { "x": 140, "z": -230 },
+      "footprint": { "width": 28, "depth": 28 },
+      "entrance": { "x": 140, "z": -215.87, "front": "north", "source": "scripts/generate_city.py:396-438" },
+      "opening_hours": { "open_minute": 0, "close_minute": 1440 },
+      "closed_days": [],
+      "roles": { "staff": [], "visitors": ["parent_with_child", "retiree", "student", "office_worker"] },
+      "slots": [
+        { "id": "house-front-door", "kind": "doorway", "role": "entrance", "position": { "x": 140, "y": 0, "z": -215.87 }, "capacity": 1, "source": "scripts/generate_city.py:396-438" }
+      ],
+      "scripts": {}
+    },
+    {
+      "id": "interior-classroom",
+      "place_type": "school",
+      "world_level": 3,
+      "status": "interior_anchors_verified_geometry_instances_pending",
+      "position": { "x": 0, "z": 0 },
+      "opening_hours": { "open_minute": 420, "close_minute": 1020 },
+      "closed_days": [5, 6],
+      "roles": { "staff": ["teacher"], "visitors": ["student", "parent_with_child"] },
+      "slot_templates": [
+        { "id": "student-desk", "kind": "desk", "role": "student_seat", "anchor_node": "I_Student Desk", "capacity_source": "decode_disconnected_mesh_components", "resolution_status": "pending_draco_geometry_resolution" },
+        { "id": "teacher-podium", "kind": "podium", "role": "teacher_station", "anchor_node": "I_Teacher's Podium", "capacity_source": "single_named_mesh", "resolution_status": "anchor_bounds_available" },
+        { "id": "school-bookshelf", "kind": "shelf", "role": "study_shelf", "anchor_node": "I_Bookshelf1", "capacity_source": "single_named_mesh", "resolution_status": "anchor_bounds_available" }
+      ],
+      "scripts": {
+        "attend_class": [
+          { "state": "enter", "duration_minutes": 1, "role": "student", "animation": "Walking_A" },
+          { "state": "study", "duration_minutes": 32, "role": "student", "animation": "Use_Item", "requires_slot": "student-desk" },
+          { "state": "class_break", "duration_minutes": 8, "role": "student", "animation": "Idle_A" },
+          { "state": "study", "duration_minutes": 32, "role": "student", "animation": "Use_Item", "requires_slot": "student-desk" },
+          { "state": "leave", "duration_minutes": 1, "role": "student", "animation": "Walking_A" }
+        ],
+        "teach_class": [
+          { "state": "teach", "duration_minutes": 32, "role": "teacher", "animation": "Interact", "requires_slot": "teacher-podium" },
+          { "state": "class_break", "duration_minutes": 8, "role": "teacher", "animation": "Idle_A" },
+          { "state": "teach", "duration_minutes": 32, "role": "teacher", "animation": "Interact", "requires_slot": "teacher-podium" }
+        ]
+      }
+    },
+    {
+      "id": "interior-supermarket",
+      "place_type": "supermarket",
+      "world_level": 5,
+      "status": "interior_anchors_verified_geometry_instances_pending",
+      "position": { "x": 0, "z": 0 },
+      "opening_hours": { "open_minute": 420, "close_minute": 1260 },
+      "closed_days": [6],
+      "roles": { "staff": ["shop_owner", "cashier"], "visitors": ["student", "retiree", "parent_with_child", "office_worker", "tourist"] },
+      "slot_templates": [
+        { "id": "rack-browsing-area", "kind": "shelf_zone", "role": "shopper", "anchor_node": "I_Rack", "capacity_source": "decode_disconnected_mesh_components", "resolution_status": "pending_draco_geometry_resolution" },
+        { "id": "cashier-register", "kind": "register", "role": "cashier_station", "anchor_node": "I_Reception Desk.001", "capacity_source": "single_named_mesh", "resolution_status": "anchor_bounds_available" },
+        { "id": "shopping-cart", "kind": "shopping_cart", "role": "shopper_cart", "anchor_node": "I_Shopping Cart", "capacity_source": "single_named_mesh", "resolution_status": "anchor_bounds_available" },
+        { "id": "checkout-queue", "kind": "queue", "role": "shopper_queue", "anchor_node": "I_Reception Desk.001", "queue_capacity": 6, "capacity_source": "requires_resolved_register_front", "resolution_status": "pending_slot_direction" }
+      ],
+      "scripts": {
+        "shop": [
+          { "state": "take_cart", "duration_minutes": 1, "role": "shopper", "animation": "Interact", "requires_slot": "shopping-cart" },
+          { "state": "browse_shelves", "duration_minutes": 3, "role": "shopper", "animation": "Walking_A", "repeat": { "min": 2, "max": 5 }, "requires_slots": ["shopping-cart", "rack-browsing-area"] },
+          { "state": "pick_items", "duration_minutes": 1, "role": "shopper", "animation": "PickUp", "repeat": { "min": 2, "max": 5 }, "requires_slots": ["shopping-cart", "rack-browsing-area"] },
+          { "state": "join_checkout_queue", "duration_minutes": 2, "role": "shopper", "animation": "Idle_A", "requires_slots": ["shopping-cart"], "requires_slot": "checkout-queue" },
+          { "state": "cashier_scans", "duration_minutes": 2, "role": "cashier", "animation": "Use_Item", "speech_de": "Das macht zwölf Euro.", "requires_slot": "cashier-register" },
+          { "state": "pay", "duration_minutes": 1, "role": "shopper", "animation": "Interact", "speech_de": "Mit Karte, bitte.", "requires_slots": ["shopping-cart"] },
+          { "state": "leave", "duration_minutes": 1, "role": "shopper", "animation": "Walking_A", "requires_slots": ["shopping-cart"] }
+        ],
+        "cashier_shift": [
+          { "state": "wait_for_customer", "duration_minutes": 1, "role": "cashier", "animation": "Idle_A", "requires_slot": "cashier-register" },
+          { "state": "scan_items", "duration_minutes": 3, "role": "cashier", "animation": "Use_Item", "requires_slot": "cashier-register" },
+          { "state": "take_payment", "duration_minutes": 1, "role": "cashier", "animation": "Interact", "requires_slot": "cashier-register" }
+        ]
+      }
+    },
+    {
+      "id": "interior-restaurant",
+      "place_type": "restaurant",
+      "world_level": 4,
+      "status": "interior_anchors_verified_geometry_instances_pending",
+      "position": { "x": 0, "z": 0 },
+      "opening_hours": { "open_minute": 600, "close_minute": 1380 },
+      "closed_days": [],
+      "roles": { "staff": ["waiter", "cook", "barista"], "visitors": ["student", "retiree", "parent_with_child", "tourist", "office_worker"] },
+      "slot_templates": [
+        { "id": "restaurant-table", "kind": "table", "role": "customer_table", "anchor_node": "I_Table.001", "capacity_source": "decode_disconnected_mesh_components", "resolution_status": "pending_draco_geometry_resolution" },
+        { "id": "restaurant-seat", "kind": "chair", "role": "customer_seat", "anchor_node": "I_Chair.001", "capacity_source": "decode_disconnected_mesh_components", "resolution_status": "pending_draco_geometry_resolution" },
+        { "id": "restaurant-bar", "kind": "service_counter", "role": "barista_station", "anchor_node": "I_Bar Counter", "capacity_source": "decode_disconnected_mesh_components", "resolution_status": "pending_draco_geometry_resolution" },
+        { "id": "restaurant-kitchen", "kind": "work_counter", "role": "cook_station", "anchor_node": "I_Kitchen Counter.002", "capacity_source": "single_named_mesh", "resolution_status": "anchor_bounds_available" },
+        { "id": "restaurant-register", "kind": "reception_counter", "role": "payment_station", "anchor_node": "I_Reception Desk", "capacity_source": "single_named_mesh", "resolution_status": "anchor_bounds_available" }
+      ],
+      "scripts": {
+        "dine": [
+          { "state": "enter", "duration_minutes": 1, "role": "customer", "animation": "Walking_A" },
+          { "state": "wait_for_table", "duration_minutes": 3, "role": "customer", "animation": "Idle_A" },
+          { "state": "sit_and_read_menu", "duration_minutes": 4, "role": "customer", "animation": "Idle_A", "requires_slots": ["restaurant-seat", "restaurant-table"] },
+          { "state": "order_food", "duration_minutes": 1, "role": "customer", "animation": "Interact", "speech_de": "Ich möchte eine Suppe, bitte." },
+          { "state": "prepare_food", "duration_minutes": 5, "role": "cook", "animation": "Use_Item", "requires_slot": "restaurant-kitchen" },
+          { "state": "carry_plate", "duration_minutes": 2, "role": "waiter", "animation": "Walking_A" },
+          { "state": "eat", "duration_minutes": 12, "role": "customer", "animation": "Use_Item", "requires_slots": ["restaurant-seat", "restaurant-table"] },
+          { "state": "request_bill", "duration_minutes": 1, "role": "customer", "animation": "Interact", "speech_de": "Die Rechnung, bitte.", "requires_slots": ["restaurant-seat", "restaurant-table"] },
+          { "state": "pay", "duration_minutes": 2, "role": "customer", "animation": "Interact", "requires_slots": ["restaurant-seat", "restaurant-table", "restaurant-register"] },
+          { "state": "leave", "duration_minutes": 1, "role": "customer", "animation": "Walking_A", "requires_slots": ["restaurant-seat", "restaurant-table"] }
+        ],
+        "waiter_shift": [
+          { "state": "wait_for_order", "duration_minutes": 2, "role": "waiter", "animation": "Idle_A" },
+          { "state": "take_order", "duration_minutes": 1, "role": "waiter", "animation": "Interact" },
+          { "state": "carry_plate", "duration_minutes": 2, "role": "waiter", "animation": "Walking_A" },
+          { "state": "clear_table", "duration_minutes": 1, "role": "waiter", "animation": "PickUp" }
+        ],
+        "cook_shift": [
+          { "state": "prepare_order", "duration_minutes": 5, "role": "cook", "animation": "Use_Item", "requires_slot": "restaurant-kitchen" },
+          { "state": "plate_food", "duration_minutes": 1, "role": "cook", "animation": "Interact" }
+        ]
+      }
+    },
+    {
+      "id": "interior-home",
+      "place_type": "home",
+      "world_level": 2,
+      "status": "interior_anchors_verified_geometry_instances_pending",
+      "position": { "x": 0, "z": 0 },
+      "opening_hours": { "open_minute": 0, "close_minute": 1440 },
+      "closed_days": [],
+      "roles": { "staff": [], "visitors": ["parent_with_child", "retiree", "student", "office_worker"] },
+      "slot_templates": [
+        { "id": "dining-table", "kind": "table", "role": "family_meal", "anchor_node": "I_Dining Table", "capacity_source": "single_named_mesh", "resolution_status": "anchor_bounds_available" },
+        { "id": "bedroom-rest", "kind": "bedroom_zone", "role": "sleep", "anchor_node": "I_Bedroom", "capacity_source": "decode_sleep_surface_geometry", "resolution_status": "pending_draco_geometry_resolution" },
+        { "id": "reading-area", "kind": "reading_table", "role": "leisure", "anchor_node": "I_Reading Table", "capacity_source": "single_named_mesh", "resolution_status": "anchor_bounds_available" }
+      ],
+      "scripts": {
+        "family_lunch": [
+          { "state": "prepare_meal", "duration_minutes": 5, "role": "resident", "animation": "Use_Item" },
+          { "state": "eat_together", "duration_minutes": 15, "role": "family", "animation": "Idle_A", "requires_slot": "dining-table", "effects": { "hunger_per_minute": -0.9, "social_per_minute": -0.18 } },
+          { "state": "clean_up", "duration_minutes": 4, "role": "resident", "animation": "Interact" }
+        ],
+        "sleep": [
+          { "state": "sleep", "duration_minutes": 60, "role": "resident", "animation": "Idle_B", "requires_slot": "bedroom-rest", "effects": { "energy_per_minute": 0.55 } }
+        ]
+      }
+    },
+    {
+      "id": "city-streets",
+      "place_type": "city_street",
+      "world_level": 1,
+      "status": "waypoint_candidates_verified",
+      "position": { "x": 30, "z": 95 },
+      "opening_hours": { "open_minute": 0, "close_minute": 1440 },
+      "closed_days": [],
+      "roles": { "staff": ["delivery_worker", "gardener_cleaner", "police_officer", "taxi_driver"], "visitors": ["student", "tourist", "cyclist", "dog_walker", "jogger"] },
+      "waypoints": [
+        { "id": "crossing-main", "position": { "x": 30, "z": 95 }, "kind": "crosswalk", "source": "scripts/generate_city.py:603-610" },
+        { "id": "crossing-cafe", "position": { "x": 30, "z": 170 }, "kind": "crosswalk", "source": "scripts/generate_city.py:603-610" },
+        { "id": "crossing-school", "position": { "x": 30, "z": 284 }, "kind": "crosswalk", "source": "scripts/generate_city.py:603-610" },
+        { "id": "crossing-house", "position": { "x": 30, "z": -203 }, "kind": "crosswalk", "source": "scripts/generate_city.py:603-610" }
+      ],
+      "scripts": {
+        "commute": [
+          { "state": "walk_to_destination", "duration_minutes": 8, "role": "resident", "animation": "Walking_A" }
+        ],
+        "wait_at_crossing": [
+          { "state": "wait_for_signal", "duration_minutes": 1, "role": "resident", "animation": "Idle_A" },
+          { "state": "cross", "duration_minutes": 1, "role": "resident", "animation": "Walking_A" }
+        ]
+      }
+    }
+  ],
+  "unavailable_place_types": [
+    { "place_type": "bus_stop", "reason": "No bus-stop model or stop anchor exists in the current city GLB or city generator." },
+    { "place_type": "pharmacy", "reason": "Vocabulary and interaction references exist, but no pharmacy building or interior model exists." },
+    { "place_type": "police_station", "reason": "No police-station model or location exists in the current assets." },
+    { "place_type": "office", "reason": "No office model or location exists in the current assets." },
+    { "place_type": "gym", "reason": "No gym model or location exists in the current assets." },
+    { "place_type": "bakery", "reason": "No bakery model or location exists in the current assets." },
+    { "place_type": "delivery_hub", "reason": "No delivery hub model or location exists in the current assets." },
+    { "place_type": "museum", "reason": "No museum model or location exists in the current assets." },
+    { "place_type": "taxi_stand", "reason": "No taxi stand model or marked location exists in the current assets." },
+    { "place_type": "workshop", "reason": "No workshop model or location exists in the current assets." }
+  ],
+  "geometry_resolution": {
+    "status": "pending",
+    "reason": "Interior meshes use KHR_draco_mesh_compression and merge repeated furniture. The current workspace has no source blend files or local decoder assets to enumerate individual seat/table instances safely.",
+    "anchor_nodes_can_be_resolved_at_runtime": true,
+    "required_for_precise_slots": ["local Draco geometry decode", "component clustering", "seat/counter approach offsets"]
+  }
+}

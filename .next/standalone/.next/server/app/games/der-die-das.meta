@@ -1,0 +1,39 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/games/layout,_N_T_/games/der-die-das/layout,_N_T_/games/der-die-das/page,_N_T_/games/der-die-das"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/games/der-die-das/__PAGE__"
+  ],
+  "prefetchHints": {
+    "hints": 64,
+    "slots": {
+      "children": {
+        "hints": 96,
+        "slots": {
+          "children": {
+            "hints": 96,
+            "slots": {
+              "children": {
+                "hints": 160,
+                "slots": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "routeCache": {
+    "key": "/route-cache/APP_PAGE/1f04e19608ce8de18ee08fa62264d1837ac3ad357d42166e8495975e9fb904d5/$/games/der-die-das",
+    "owner": {
+      "kind": "APP_PAGE",
+      "sourceRoute": "/games/der-die-das/page"
+    },
+    "isFallback": false
+  }
+}

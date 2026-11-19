@@ -1,0 +1,1166 @@
+{
+  "schema_version": 1,
+  "npc_schema": "./living-town-npc.schema.json",
+  "population_defaults": {
+    "minimum": 60,
+    "default": 72,
+    "maximum": 120,
+    "full_simulation_radius_m": 40,
+    "full_simulation_cap": 36
+  },
+  "place_types": [
+    "home",
+    "city_street",
+    "school",
+    "bookshop",
+    "restaurant",
+    "supermarket",
+    "bus_stop",
+    "police_station",
+    "pharmacy",
+    "office",
+    "park",
+    "cafe",
+    "bakery",
+    "delivery_hub",
+    "museum",
+    "gym",
+    "taxi_stand",
+    "workshop"
+  ],
+  "schedule_templates": {
+    "student": {
+      "weekday": [
+        { "start": 0, "end": 390, "activity": "sleep", "place": "home" },
+        { "start": 390, "end": 450, "activity": "morning_routine", "place": "home" },
+        { "start": 450, "end": 495, "activity": "commute", "place": "city_street" },
+        { "start": 495, "end": 780, "activity": "study", "place": "school" },
+        { "start": 780, "end": 840, "activity": "lunch", "place": "restaurant" },
+        { "start": 840, "end": 930, "activity": "study", "place": "school" },
+        { "start": 930, "end": 1020, "activity": "commute", "place": "city_street" },
+        { "start": 1020, "end": 1260, "activity": "leisure", "place": "home" },
+        { "start": 1260, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "saturday": [
+        { "start": 0, "end": 510, "activity": "sleep", "place": "home" },
+        { "start": 510, "end": 600, "activity": "morning_routine", "place": "home" },
+        { "start": 600, "end": 780, "activity": "leisure", "place": "park" },
+        { "start": 780, "end": 900, "activity": "lunch", "place": "restaurant" },
+        { "start": 900, "end": 1200, "activity": "social", "place": "city_street" },
+        { "start": 1200, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "sunday": [
+        { "start": 0, "end": 510, "activity": "sleep", "place": "home" },
+        { "start": 510, "end": 630, "activity": "morning_routine", "place": "home" },
+        { "start": 630, "end": 840, "activity": "leisure", "place": "park" },
+        { "start": 840, "end": 960, "activity": "lunch", "place": "home" },
+        { "start": 960, "end": 1200, "activity": "social", "place": "city_street" },
+        { "start": 1200, "end": 1440, "activity": "sleep", "place": "home" }
+      ]
+    },
+    "school_staff": {
+      "weekday": [
+        { "start": 0, "end": 330, "activity": "sleep", "place": "home" },
+        { "start": 330, "end": 405, "activity": "morning_routine", "place": "home" },
+        { "start": 405, "end": 450, "activity": "commute", "place": "city_street" },
+        { "start": 450, "end": 810, "activity": "work", "place": "school" },
+        { "start": 810, "end": 870, "activity": "lunch", "place": "restaurant" },
+        { "start": 870, "end": 990, "activity": "work", "place": "school" },
+        { "start": 990, "end": 1050, "activity": "commute", "place": "city_street" },
+        { "start": 1050, "end": 1260, "activity": "home_evening", "place": "home" },
+        { "start": 1260, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "saturday": [
+        { "start": 0, "end": 420, "activity": "sleep", "place": "home" },
+        { "start": 420, "end": 540, "activity": "morning_routine", "place": "home" },
+        { "start": 540, "end": 720, "activity": "shopping", "place": "supermarket" },
+        { "start": 720, "end": 900, "activity": "leisure", "place": "park" },
+        { "start": 900, "end": 1260, "activity": "social", "place": "restaurant" },
+        { "start": 1260, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "sunday": [
+        { "start": 0, "end": 450, "activity": "sleep", "place": "home" },
+        { "start": 450, "end": 570, "activity": "morning_routine", "place": "home" },
+        { "start": 570, "end": 840, "activity": "leisure", "place": "park" },
+        { "start": 840, "end": 960, "activity": "lunch", "place": "home" },
+        { "start": 960, "end": 1260, "activity": "social", "place": "city_street" },
+        { "start": 1260, "end": 1440, "activity": "sleep", "place": "home" }
+      ]
+    },
+    "early_retail": {
+      "weekday": [
+        { "start": 0, "end": 300, "activity": "sleep", "place": "home" },
+        { "start": 300, "end": 360, "activity": "morning_routine", "place": "home" },
+        { "start": 360, "end": 405, "activity": "commute", "place": "city_street" },
+        { "start": 405, "end": 735, "activity": "work", "place": "bakery" },
+        { "start": 735, "end": 795, "activity": "lunch", "place": "cafe" },
+        { "start": 795, "end": 1050, "activity": "work", "place": "bakery" },
+        { "start": 1050, "end": 1110, "activity": "commute", "place": "city_street" },
+        { "start": 1110, "end": 1290, "activity": "home_evening", "place": "home" },
+        { "start": 1290, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "saturday": [
+        { "start": 0, "end": 330, "activity": "sleep", "place": "home" },
+        { "start": 330, "end": 390, "activity": "morning_routine", "place": "home" },
+        { "start": 390, "end": 720, "activity": "work", "place": "bakery" },
+        { "start": 720, "end": 840, "activity": "lunch", "place": "cafe" },
+        { "start": 840, "end": 1110, "activity": "leisure", "place": "park" },
+        { "start": 1110, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "sunday": [
+        { "start": 0, "end": 360, "activity": "sleep", "place": "home" },
+        { "start": 360, "end": 480, "activity": "morning_routine", "place": "home" },
+        { "start": 480, "end": 750, "activity": "family_time", "place": "park" },
+        { "start": 750, "end": 870, "activity": "lunch", "place": "home" },
+        { "start": 870, "end": 1230, "activity": "leisure", "place": "home" },
+        { "start": 1230, "end": 1440, "activity": "sleep", "place": "home" }
+      ]
+    },
+    "retail_shift": {
+      "weekday": [
+        { "start": 0, "end": 390, "activity": "sleep", "place": "home" },
+        { "start": 390, "end": 465, "activity": "morning_routine", "place": "home" },
+        { "start": 465, "end": 510, "activity": "commute", "place": "city_street" },
+        { "start": 510, "end": 780, "activity": "work", "place": "supermarket" },
+        { "start": 780, "end": 840, "activity": "break", "place": "supermarket" },
+        { "start": 840, "end": 1110, "activity": "work", "place": "supermarket" },
+        { "start": 1110, "end": 1170, "activity": "commute", "place": "city_street" },
+        { "start": 1170, "end": 1290, "activity": "home_evening", "place": "home" },
+        { "start": 1290, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "saturday": [
+        { "start": 0, "end": 390, "activity": "sleep", "place": "home" },
+        { "start": 390, "end": 465, "activity": "morning_routine", "place": "home" },
+        { "start": 465, "end": 510, "activity": "commute", "place": "city_street" },
+        { "start": 510, "end": 810, "activity": "work", "place": "supermarket" },
+        { "start": 810, "end": 870, "activity": "break", "place": "supermarket" },
+        { "start": 870, "end": 1110, "activity": "work", "place": "supermarket" },
+        { "start": 1110, "end": 1200, "activity": "commute", "place": "city_street" },
+        { "start": 1200, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "sunday": [
+        { "start": 0, "end": 420, "activity": "sleep", "place": "home" },
+        { "start": 420, "end": 510, "activity": "morning_routine", "place": "home" },
+        { "start": 510, "end": 780, "activity": "family_time", "place": "park" },
+        { "start": 780, "end": 900, "activity": "lunch", "place": "home" },
+        { "start": 900, "end": 1230, "activity": "leisure", "place": "home" },
+        { "start": 1230, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "sunday_policy": "closed"
+    },
+    "pharmacy_shift": {
+      "weekday": [
+        { "start": 0, "end": 360, "activity": "sleep", "place": "home" },
+        { "start": 360, "end": 420, "activity": "morning_routine", "place": "home" },
+        { "start": 420, "end": 465, "activity": "commute", "place": "city_street" },
+        { "start": 465, "end": 735, "activity": "work", "place": "pharmacy" },
+        { "start": 735, "end": 795, "activity": "break", "place": "pharmacy" },
+        { "start": 795, "end": 1035, "activity": "work", "place": "pharmacy" },
+        { "start": 1035, "end": 1095, "activity": "commute", "place": "city_street" },
+        { "start": 1095, "end": 1260, "activity": "home_evening", "place": "home" },
+        { "start": 1260, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "saturday": [
+        { "start": 0, "end": 390, "activity": "sleep", "place": "home" },
+        { "start": 390, "end": 480, "activity": "morning_routine", "place": "home" },
+        { "start": 480, "end": 780, "activity": "work", "place": "pharmacy" },
+        { "start": 780, "end": 840, "activity": "break", "place": "pharmacy" },
+        { "start": 840, "end": 990, "activity": "work", "place": "pharmacy" },
+        { "start": 990, "end": 1080, "activity": "commute", "place": "city_street" },
+        { "start": 1080, "end": 1260, "activity": "leisure", "place": "park" },
+        { "start": 1260, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "sunday": [
+        { "start": 0, "end": 420, "activity": "sleep", "place": "home" },
+        { "start": 420, "end": 510, "activity": "morning_routine", "place": "home" },
+        { "start": 510, "end": 780, "activity": "family_time", "place": "park" },
+        { "start": 780, "end": 900, "activity": "lunch", "place": "home" },
+        { "start": 900, "end": 1200, "activity": "leisure", "place": "home" },
+        { "start": 1200, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "sunday_policy": "closed"
+    },
+    "cafe_shift": {
+      "weekday": [
+        { "start": 0, "end": 330, "activity": "sleep", "place": "home" },
+        { "start": 330, "end": 390, "activity": "morning_routine", "place": "home" },
+        { "start": 390, "end": 435, "activity": "commute", "place": "city_street" },
+        { "start": 435, "end": 735, "activity": "work", "place": "cafe" },
+        { "start": 735, "end": 795, "activity": "break", "place": "cafe" },
+        { "start": 795, "end": 1005, "activity": "work", "place": "cafe" },
+        { "start": 1005, "end": 1065, "activity": "commute", "place": "city_street" },
+        { "start": 1065, "end": 1260, "activity": "leisure", "place": "home" },
+        { "start": 1260, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "saturday": [
+        { "start": 0, "end": 390, "activity": "sleep", "place": "home" },
+        { "start": 390, "end": 480, "activity": "morning_routine", "place": "home" },
+        { "start": 480, "end": 840, "activity": "work", "place": "cafe" },
+        { "start": 840, "end": 900, "activity": "break", "place": "cafe" },
+        { "start": 900, "end": 1050, "activity": "work", "place": "cafe" },
+        { "start": 1050, "end": 1140, "activity": "commute", "place": "city_street" },
+        { "start": 1140, "end": 1320, "activity": "social", "place": "park" },
+        { "start": 1320, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "sunday": [
+        { "start": 0, "end": 420, "activity": "sleep", "place": "home" },
+        { "start": 420, "end": 510, "activity": "morning_routine", "place": "home" },
+        { "start": 510, "end": 780, "activity": "work", "place": "cafe" },
+        { "start": 780, "end": 840, "activity": "break", "place": "cafe" },
+        { "start": 840, "end": 1020, "activity": "work", "place": "cafe" },
+        { "start": 1020, "end": 1110, "activity": "commute", "place": "city_street" },
+        { "start": 1110, "end": 1320, "activity": "family_time", "place": "home" },
+        { "start": 1320, "end": 1440, "activity": "sleep", "place": "home" }
+      ]
+    },
+    "workshop_shift": {
+      "weekday": [
+        { "start": 0, "end": 360, "activity": "sleep", "place": "home" },
+        { "start": 360, "end": 420, "activity": "morning_routine", "place": "home" },
+        { "start": 420, "end": 465, "activity": "commute", "place": "city_street" },
+        { "start": 465, "end": 735, "activity": "work", "place": "workshop" },
+        { "start": 735, "end": 795, "activity": "lunch", "place": "cafe" },
+        { "start": 795, "end": 1035, "activity": "work", "place": "workshop" },
+        { "start": 1035, "end": 1095, "activity": "commute", "place": "city_street" },
+        { "start": 1095, "end": 1260, "activity": "hobby", "place": "home" },
+        { "start": 1260, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "saturday": [
+        { "start": 0, "end": 390, "activity": "sleep", "place": "home" },
+        { "start": 390, "end": 480, "activity": "morning_routine", "place": "home" },
+        { "start": 480, "end": 780, "activity": "work", "place": "workshop" },
+        { "start": 780, "end": 900, "activity": "lunch", "place": "restaurant" },
+        { "start": 900, "end": 1080, "activity": "hobby", "place": "home" },
+        { "start": 1080, "end": 1260, "activity": "social", "place": "cafe" },
+        { "start": 1260, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "sunday": [
+        { "start": 0, "end": 450, "activity": "sleep", "place": "home" },
+        { "start": 450, "end": 570, "activity": "morning_routine", "place": "home" },
+        { "start": 570, "end": 840, "activity": "leisure", "place": "park" },
+        { "start": 840, "end": 960, "activity": "lunch", "place": "home" },
+        { "start": 960, "end": 1200, "activity": "hobby", "place": "home" },
+        { "start": 1200, "end": 1440, "activity": "sleep", "place": "home" }
+      ]
+    },
+    "active_morning": {
+      "weekday": [
+        { "start": 0, "end": 390, "activity": "sleep", "place": "home" },
+        { "start": 390, "end": 450, "activity": "morning_routine", "place": "home" },
+        { "start": 450, "end": 600, "activity": "exercise", "place": "park" },
+        { "start": 600, "end": 660, "activity": "breakfast", "place": "cafe" },
+        { "start": 660, "end": 900, "activity": "leisure", "place": "city_street" },
+        { "start": 900, "end": 960, "activity": "lunch", "place": "home" },
+        { "start": 960, "end": 1200, "activity": "hobby", "place": "park" },
+        { "start": 1200, "end": 1320, "activity": "home_evening", "place": "home" },
+        { "start": 1320, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "saturday": [
+        { "start": 0, "end": 450, "activity": "sleep", "place": "home" },
+        { "start": 450, "end": 540, "activity": "morning_routine", "place": "home" },
+        { "start": 540, "end": 750, "activity": "exercise", "place": "park" },
+        { "start": 750, "end": 870, "activity": "lunch", "place": "restaurant" },
+        { "start": 870, "end": 1140, "activity": "social", "place": "city_street" },
+        { "start": 1140, "end": 1320, "activity": "leisure", "place": "home" },
+        { "start": 1320, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "sunday": [
+        { "start": 0, "end": 450, "activity": "sleep", "place": "home" },
+        { "start": 450, "end": 570, "activity": "morning_routine", "place": "home" },
+        { "start": 570, "end": 810, "activity": "exercise", "place": "park" },
+        { "start": 810, "end": 930, "activity": "lunch", "place": "home" },
+        { "start": 930, "end": 1200, "activity": "family_time", "place": "park" },
+        { "start": 1200, "end": 1440, "activity": "sleep", "place": "home" }
+      ]
+    },
+    "restaurant_shift": {
+      "weekday": [
+        { "start": 0, "end": 450, "activity": "sleep", "place": "home" },
+        { "start": 450, "end": 510, "activity": "morning_routine", "place": "home" },
+        { "start": 510, "end": 555, "activity": "commute", "place": "city_street" },
+        { "start": 555, "end": 660, "activity": "work_prep", "place": "restaurant" },
+        { "start": 660, "end": 840, "activity": "work", "place": "restaurant" },
+        { "start": 840, "end": 900, "activity": "break", "place": "restaurant" },
+        { "start": 900, "end": 1260, "activity": "work", "place": "restaurant" },
+        { "start": 1260, "end": 1320, "activity": "commute", "place": "city_street" },
+        { "start": 1320, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "saturday": [
+        { "start": 0, "end": 480, "activity": "sleep", "place": "home" },
+        { "start": 480, "end": 540, "activity": "morning_routine", "place": "home" },
+        { "start": 540, "end": 600, "activity": "commute", "place": "city_street" },
+        { "start": 600, "end": 690, "activity": "work_prep", "place": "restaurant" },
+        { "start": 690, "end": 900, "activity": "work", "place": "restaurant" },
+        { "start": 900, "end": 960, "activity": "break", "place": "restaurant" },
+        { "start": 960, "end": 1260, "activity": "work", "place": "restaurant" },
+        { "start": 1260, "end": 1320, "activity": "commute", "place": "city_street" },
+        { "start": 1320, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "sunday": [
+        { "start": 0, "end": 480, "activity": "sleep", "place": "home" },
+        { "start": 480, "end": 570, "activity": "morning_routine", "place": "home" },
+        { "start": 570, "end": 840, "activity": "leisure", "place": "park" },
+        { "start": 840, "end": 960, "activity": "lunch", "place": "home" },
+        { "start": 960, "end": 1200, "activity": "social", "place": "city_street" },
+        { "start": 1200, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "sunday_policy": "closed"
+    },
+    "night_hospitality": {
+      "weekday": [
+        { "start": 0, "end": 120, "activity": "work", "place": "restaurant" },
+        { "start": 120, "end": 180, "activity": "commute", "place": "city_street" },
+        { "start": 180, "end": 600, "activity": "sleep", "place": "home" },
+        { "start": 600, "end": 660, "activity": "morning_routine", "place": "home" },
+        { "start": 660, "end": 840, "activity": "leisure", "place": "park" },
+        { "start": 840, "end": 900, "activity": "lunch", "place": "home" },
+        { "start": 900, "end": 960, "activity": "commute", "place": "city_street" },
+        { "start": 960, "end": 1440, "activity": "work", "place": "restaurant" }
+      ],
+      "saturday": [
+        { "start": 0, "end": 150, "activity": "work", "place": "restaurant" },
+        { "start": 150, "end": 210, "activity": "commute", "place": "city_street" },
+        { "start": 210, "end": 630, "activity": "sleep", "place": "home" },
+        { "start": 630, "end": 720, "activity": "morning_routine", "place": "home" },
+        { "start": 720, "end": 900, "activity": "leisure", "place": "park" },
+        { "start": 900, "end": 960, "activity": "lunch", "place": "home" },
+        { "start": 960, "end": 1440, "activity": "work", "place": "restaurant" }
+      ],
+      "sunday": [
+        { "start": 0, "end": 150, "activity": "work", "place": "restaurant" },
+        { "start": 150, "end": 210, "activity": "commute", "place": "city_street" },
+        { "start": 210, "end": 630, "activity": "sleep", "place": "home" },
+        { "start": 630, "end": 780, "activity": "morning_routine", "place": "home" },
+        { "start": 780, "end": 960, "activity": "family_time", "place": "park" },
+        { "start": 960, "end": 1080, "activity": "lunch", "place": "home" },
+        { "start": 1080, "end": 1440, "activity": "leisure", "place": "home" }
+      ]
+    },
+    "bus_driver": {
+      "weekday": [
+        { "start": 0, "end": 240, "activity": "sleep", "place": "home" },
+        { "start": 240, "end": 300, "activity": "morning_routine", "place": "home" },
+        { "start": 300, "end": 345, "activity": "commute", "place": "city_street" },
+        { "start": 345, "end": 705, "activity": "work_route", "place": "bus_stop" },
+        { "start": 705, "end": 765, "activity": "break", "place": "bus_stop" },
+        { "start": 765, "end": 1125, "activity": "work_route", "place": "bus_stop" },
+        { "start": 1125, "end": 1185, "activity": "commute", "place": "city_street" },
+        { "start": 1185, "end": 1320, "activity": "home_evening", "place": "home" },
+        { "start": 1320, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "saturday": [
+        { "start": 0, "end": 300, "activity": "sleep", "place": "home" },
+        { "start": 300, "end": 390, "activity": "morning_routine", "place": "home" },
+        { "start": 390, "end": 750, "activity": "work_route", "place": "bus_stop" },
+        { "start": 750, "end": 840, "activity": "break", "place": "bus_stop" },
+        { "start": 840, "end": 1080, "activity": "work_route", "place": "bus_stop" },
+        { "start": 1080, "end": 1200, "activity": "commute", "place": "city_street" },
+        { "start": 1200, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "sunday": [
+        { "start": 0, "end": 360, "activity": "sleep", "place": "home" },
+        { "start": 360, "end": 450, "activity": "morning_routine", "place": "home" },
+        { "start": 450, "end": 720, "activity": "leisure", "place": "park" },
+        { "start": 720, "end": 840, "activity": "lunch", "place": "home" },
+        { "start": 840, "end": 1080, "activity": "social", "place": "city_street" },
+        { "start": 1080, "end": 1440, "activity": "sleep", "place": "home" }
+      ]
+    },
+    "office_worker": {
+      "weekday": [
+        { "start": 0, "end": 360, "activity": "sleep", "place": "home" },
+        { "start": 360, "end": 420, "activity": "morning_routine", "place": "home" },
+        { "start": 420, "end": 480, "activity": "commute", "place": "city_street" },
+        { "start": 480, "end": 720, "activity": "work", "place": "office" },
+        { "start": 720, "end": 780, "activity": "lunch", "place": "cafe" },
+        { "start": 780, "end": 1020, "activity": "work", "place": "office" },
+        { "start": 1020, "end": 1080, "activity": "commute", "place": "city_street" },
+        { "start": 1080, "end": 1260, "activity": "shopping", "place": "supermarket" },
+        { "start": 1260, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "saturday": [
+        { "start": 0, "end": 420, "activity": "sleep", "place": "home" },
+        { "start": 420, "end": 510, "activity": "morning_routine", "place": "home" },
+        { "start": 510, "end": 690, "activity": "shopping", "place": "supermarket" },
+        { "start": 690, "end": 810, "activity": "lunch", "place": "restaurant" },
+        { "start": 810, "end": 1080, "activity": "leisure", "place": "park" },
+        { "start": 1080, "end": 1260, "activity": "social", "place": "cafe" },
+        { "start": 1260, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "sunday": [
+        { "start": 0, "end": 450, "activity": "sleep", "place": "home" },
+        { "start": 450, "end": 570, "activity": "morning_routine", "place": "home" },
+        { "start": 570, "end": 840, "activity": "leisure", "place": "park" },
+        { "start": 840, "end": 960, "activity": "lunch", "place": "home" },
+        { "start": 960, "end": 1200, "activity": "social", "place": "city_street" },
+        { "start": 1200, "end": 1440, "activity": "sleep", "place": "home" }
+      ]
+    },
+    "retiree": {
+      "weekday": [
+        { "start": 0, "end": 420, "activity": "sleep", "place": "home" },
+        { "start": 420, "end": 510, "activity": "morning_routine", "place": "home" },
+        { "start": 510, "end": 660, "activity": "walk", "place": "park" },
+        { "start": 660, "end": 780, "activity": "shopping", "place": "supermarket" },
+        { "start": 780, "end": 870, "activity": "lunch", "place": "home" },
+        { "start": 870, "end": 1110, "activity": "hobby", "place": "home" },
+        { "start": 1110, "end": 1260, "activity": "social", "place": "cafe" },
+        { "start": 1260, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "saturday": [
+        { "start": 0, "end": 450, "activity": "sleep", "place": "home" },
+        { "start": 450, "end": 540, "activity": "morning_routine", "place": "home" },
+        { "start": 540, "end": 720, "activity": "walk", "place": "park" },
+        { "start": 720, "end": 840, "activity": "lunch", "place": "restaurant" },
+        { "start": 840, "end": 1110, "activity": "family_time", "place": "home" },
+        { "start": 1110, "end": 1260, "activity": "social", "place": "cafe" },
+        { "start": 1260, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "sunday": [
+        { "start": 0, "end": 450, "activity": "sleep", "place": "home" },
+        { "start": 450, "end": 570, "activity": "morning_routine", "place": "home" },
+        { "start": 570, "end": 840, "activity": "family_time", "place": "home" },
+        { "start": 840, "end": 960, "activity": "lunch", "place": "home" },
+        { "start": 960, "end": 1200, "activity": "walk", "place": "park" },
+        { "start": 1200, "end": 1440, "activity": "sleep", "place": "home" }
+      ]
+    },
+    "parent_school": {
+      "weekday": [
+        { "start": 0, "end": 360, "activity": "sleep", "place": "home" },
+        { "start": 360, "end": 420, "activity": "morning_routine", "place": "home" },
+        { "start": 420, "end": 480, "activity": "school_run", "place": "school" },
+        { "start": 480, "end": 540, "activity": "commute", "place": "city_street" },
+        { "start": 540, "end": 750, "activity": "work", "place": "office" },
+        { "start": 750, "end": 810, "activity": "lunch", "place": "cafe" },
+        { "start": 810, "end": 990, "activity": "work", "place": "office" },
+        { "start": 990, "end": 1050, "activity": "school_run", "place": "school" },
+        { "start": 1050, "end": 1260, "activity": "family_time", "place": "home" },
+        { "start": 1260, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "saturday": [
+        { "start": 0, "end": 420, "activity": "sleep", "place": "home" },
+        { "start": 420, "end": 540, "activity": "morning_routine", "place": "home" },
+        { "start": 540, "end": 720, "activity": "shopping", "place": "supermarket" },
+        { "start": 720, "end": 870, "activity": "lunch", "place": "restaurant" },
+        { "start": 870, "end": 1140, "activity": "family_time", "place": "park" },
+        { "start": 1140, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "sunday": [
+        { "start": 0, "end": 450, "activity": "sleep", "place": "home" },
+        { "start": 450, "end": 570, "activity": "morning_routine", "place": "home" },
+        { "start": 570, "end": 840, "activity": "family_time", "place": "park" },
+        { "start": 840, "end": 960, "activity": "lunch", "place": "home" },
+        { "start": 960, "end": 1200, "activity": "family_time", "place": "home" },
+        { "start": 1200, "end": 1440, "activity": "sleep", "place": "home" }
+      ]
+    },
+    "delivery_route": {
+      "weekday": [
+        { "start": 0, "end": 360, "activity": "sleep", "place": "home" },
+        { "start": 360, "end": 420, "activity": "morning_routine", "place": "home" },
+        { "start": 420, "end": 465, "activity": "commute", "place": "delivery_hub" },
+        { "start": 465, "end": 765, "activity": "work_route", "place": "city_street" },
+        { "start": 765, "end": 825, "activity": "lunch", "place": "cafe" },
+        { "start": 825, "end": 1125, "activity": "work_route", "place": "city_street" },
+        { "start": 1125, "end": 1200, "activity": "commute", "place": "city_street" },
+        { "start": 1200, "end": 1320, "activity": "home_evening", "place": "home" },
+        { "start": 1320, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "saturday": [
+        { "start": 0, "end": 390, "activity": "sleep", "place": "home" },
+        { "start": 390, "end": 480, "activity": "morning_routine", "place": "home" },
+        { "start": 480, "end": 780, "activity": "work_route", "place": "city_street" },
+        { "start": 780, "end": 900, "activity": "lunch", "place": "restaurant" },
+        { "start": 900, "end": 1080, "activity": "leisure", "place": "park" },
+        { "start": 1080, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "sunday": [
+        { "start": 0, "end": 450, "activity": "sleep", "place": "home" },
+        { "start": 450, "end": 570, "activity": "morning_routine", "place": "home" },
+        { "start": 570, "end": 840, "activity": "family_time", "place": "park" },
+        { "start": 840, "end": 960, "activity": "lunch", "place": "home" },
+        { "start": 960, "end": 1200, "activity": "leisure", "place": "home" },
+        { "start": 1200, "end": 1440, "activity": "sleep", "place": "home" }
+      ]
+    },
+    "tourist_day": {
+      "weekday": [
+        { "start": 0, "end": 450, "activity": "sleep", "place": "home" },
+        { "start": 450, "end": 540, "activity": "morning_routine", "place": "home" },
+        { "start": 540, "end": 750, "activity": "sightseeing", "place": "city_street" },
+        { "start": 750, "end": 840, "activity": "lunch", "place": "restaurant" },
+        { "start": 840, "end": 1050, "activity": "sightseeing", "place": "museum" },
+        { "start": 1050, "end": 1200, "activity": "shopping", "place": "city_street" },
+        { "start": 1200, "end": 1320, "activity": "social", "place": "cafe" },
+        { "start": 1320, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "saturday": [
+        { "start": 0, "end": 480, "activity": "sleep", "place": "home" },
+        { "start": 480, "end": 570, "activity": "morning_routine", "place": "home" },
+        { "start": 570, "end": 780, "activity": "sightseeing", "place": "city_street" },
+        { "start": 780, "end": 900, "activity": "lunch", "place": "restaurant" },
+        { "start": 900, "end": 1110, "activity": "sightseeing", "place": "museum" },
+        { "start": 1110, "end": 1260, "activity": "social", "place": "cafe" },
+        { "start": 1260, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "sunday": [
+        { "start": 0, "end": 480, "activity": "sleep", "place": "home" },
+        { "start": 480, "end": 600, "activity": "morning_routine", "place": "home" },
+        { "start": 600, "end": 870, "activity": "walk", "place": "park" },
+        { "start": 870, "end": 990, "activity": "lunch", "place": "restaurant" },
+        { "start": 990, "end": 1200, "activity": "sightseeing", "place": "city_street" },
+        { "start": 1200, "end": 1440, "activity": "sleep", "place": "home" }
+      ]
+    },
+    "artist_flexible": {
+      "weekday": [
+        { "start": 0, "end": 450, "activity": "sleep", "place": "home" },
+        { "start": 450, "end": 540, "activity": "morning_routine", "place": "home" },
+        { "start": 540, "end": 780, "activity": "work", "place": "home" },
+        { "start": 780, "end": 870, "activity": "lunch", "place": "cafe" },
+        { "start": 870, "end": 1080, "activity": "work", "place": "home" },
+        { "start": 1080, "end": 1230, "activity": "social", "place": "city_street" },
+        { "start": 1230, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "saturday": [
+        { "start": 0, "end": 510, "activity": "sleep", "place": "home" },
+        { "start": 510, "end": 600, "activity": "morning_routine", "place": "home" },
+        { "start": 600, "end": 900, "activity": "work", "place": "city_street" },
+        { "start": 900, "end": 1020, "activity": "lunch", "place": "restaurant" },
+        { "start": 1020, "end": 1260, "activity": "social", "place": "cafe" },
+        { "start": 1260, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "sunday": [
+        { "start": 0, "end": 510, "activity": "sleep", "place": "home" },
+        { "start": 510, "end": 630, "activity": "morning_routine", "place": "home" },
+        { "start": 630, "end": 900, "activity": "leisure", "place": "park" },
+        { "start": 900, "end": 1020, "activity": "lunch", "place": "home" },
+        { "start": 1020, "end": 1260, "activity": "social", "place": "city_street" },
+        { "start": 1260, "end": 1440, "activity": "sleep", "place": "home" }
+      ]
+    },
+    "municipal_shift": {
+      "weekday": [
+        { "start": 0, "end": 330, "activity": "sleep", "place": "home" },
+        { "start": 330, "end": 390, "activity": "morning_routine", "place": "home" },
+        { "start": 390, "end": 435, "activity": "commute", "place": "city_street" },
+        { "start": 435, "end": 795, "activity": "work", "place": "city_street" },
+        { "start": 795, "end": 855, "activity": "lunch", "place": "cafe" },
+        { "start": 855, "end": 1035, "activity": "work", "place": "city_street" },
+        { "start": 1035, "end": 1095, "activity": "commute", "place": "city_street" },
+        { "start": 1095, "end": 1260, "activity": "hobby", "place": "home" },
+        { "start": 1260, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "saturday": [
+        { "start": 0, "end": 390, "activity": "sleep", "place": "home" },
+        { "start": 390, "end": 480, "activity": "morning_routine", "place": "home" },
+        { "start": 480, "end": 780, "activity": "hobby", "place": "park" },
+        { "start": 780, "end": 900, "activity": "lunch", "place": "home" },
+        { "start": 900, "end": 1200, "activity": "leisure", "place": "city_street" },
+        { "start": 1200, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "sunday": [
+        { "start": 0, "end": 420, "activity": "sleep", "place": "home" },
+        { "start": 420, "end": 540, "activity": "morning_routine", "place": "home" },
+        { "start": 540, "end": 840, "activity": "leisure", "place": "park" },
+        { "start": 840, "end": 960, "activity": "lunch", "place": "home" },
+        { "start": 960, "end": 1200, "activity": "social", "place": "city_street" },
+        { "start": 1200, "end": 1440, "activity": "sleep", "place": "home" }
+      ]
+    },
+    "taxi_shift": {
+      "weekday": [
+        { "start": 0, "end": 330, "activity": "sleep", "place": "home" },
+        { "start": 330, "end": 390, "activity": "morning_routine", "place": "home" },
+        { "start": 390, "end": 450, "activity": "commute", "place": "taxi_stand" },
+        { "start": 450, "end": 750, "activity": "work_route", "place": "city_street" },
+        { "start": 750, "end": 810, "activity": "lunch", "place": "cafe" },
+        { "start": 810, "end": 1110, "activity": "work_route", "place": "city_street" },
+        { "start": 1110, "end": 1170, "activity": "commute", "place": "city_street" },
+        { "start": 1170, "end": 1290, "activity": "home_evening", "place": "home" },
+        { "start": 1290, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "saturday": [
+        { "start": 0, "end": 360, "activity": "sleep", "place": "home" },
+        { "start": 360, "end": 450, "activity": "morning_routine", "place": "home" },
+        { "start": 450, "end": 840, "activity": "work_route", "place": "taxi_stand" },
+        { "start": 840, "end": 960, "activity": "lunch", "place": "restaurant" },
+        { "start": 960, "end": 1200, "activity": "work_route", "place": "taxi_stand" },
+        { "start": 1200, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "sunday": [
+        { "start": 0, "end": 420, "activity": "sleep", "place": "home" },
+        { "start": 420, "end": 540, "activity": "morning_routine", "place": "home" },
+        { "start": 540, "end": 840, "activity": "leisure", "place": "park" },
+        { "start": 840, "end": 960, "activity": "lunch", "place": "home" },
+        { "start": 960, "end": 1200, "activity": "social", "place": "city_street" },
+        { "start": 1200, "end": 1440, "activity": "sleep", "place": "home" }
+      ]
+    },
+    "fitness_coach": {
+      "weekday": [
+        { "start": 0, "end": 420, "activity": "sleep", "place": "home" },
+        { "start": 420, "end": 480, "activity": "morning_routine", "place": "home" },
+        { "start": 480, "end": 600, "activity": "exercise", "place": "park" },
+        { "start": 600, "end": 660, "activity": "commute", "place": "city_street" },
+        { "start": 660, "end": 900, "activity": "work", "place": "gym" },
+        { "start": 900, "end": 960, "activity": "lunch", "place": "cafe" },
+        { "start": 960, "end": 1200, "activity": "work", "place": "gym" },
+        { "start": 1200, "end": 1260, "activity": "commute", "place": "city_street" },
+        { "start": 1260, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "saturday": [
+        { "start": 0, "end": 450, "activity": "sleep", "place": "home" },
+        { "start": 450, "end": 540, "activity": "morning_routine", "place": "home" },
+        { "start": 540, "end": 720, "activity": "exercise", "place": "park" },
+        { "start": 720, "end": 840, "activity": "lunch", "place": "restaurant" },
+        { "start": 840, "end": 1080, "activity": "leisure", "place": "gym" },
+        { "start": 1080, "end": 1260, "activity": "social", "place": "cafe" },
+        { "start": 1260, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "sunday": [
+        { "start": 0, "end": 450, "activity": "sleep", "place": "home" },
+        { "start": 450, "end": 570, "activity": "morning_routine", "place": "home" },
+        { "start": 570, "end": 840, "activity": "leisure", "place": "park" },
+        { "start": 840, "end": 960, "activity": "lunch", "place": "home" },
+        { "start": 960, "end": 1200, "activity": "social", "place": "city_street" },
+        { "start": 1200, "end": 1440, "activity": "sleep", "place": "home" }
+      ]
+    },
+    "night_shift": {
+      "weekday": [
+        { "start": 0, "end": 360, "activity": "work", "place": "police_station" },
+        { "start": 360, "end": 420, "activity": "commute", "place": "city_street" },
+        { "start": 420, "end": 900, "activity": "sleep", "place": "home" },
+        { "start": 900, "end": 960, "activity": "morning_routine", "place": "home" },
+        { "start": 960, "end": 1080, "activity": "lunch", "place": "cafe" },
+        { "start": 1080, "end": 1140, "activity": "commute", "place": "city_street" },
+        { "start": 1140, "end": 1440, "activity": "work", "place": "police_station" }
+      ],
+      "saturday": [
+        { "start": 0, "end": 360, "activity": "work", "place": "police_station" },
+        { "start": 360, "end": 420, "activity": "commute", "place": "city_street" },
+        { "start": 420, "end": 930, "activity": "sleep", "place": "home" },
+        { "start": 930, "end": 1020, "activity": "morning_routine", "place": "home" },
+        { "start": 1020, "end": 1140, "activity": "leisure", "place": "park" },
+        { "start": 1140, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "sunday": [
+        { "start": 0, "end": 360, "activity": "work", "place": "police_station" },
+        { "start": 360, "end": 420, "activity": "commute", "place": "city_street" },
+        { "start": 420, "end": 930, "activity": "sleep", "place": "home" },
+        { "start": 930, "end": 1020, "activity": "morning_routine", "place": "home" },
+        { "start": 1020, "end": 1140, "activity": "family_time", "place": "home" },
+        { "start": 1140, "end": 1440, "activity": "sleep", "place": "home" }
+      ]
+    },
+    "dog_walk": {
+      "weekday": [
+        { "start": 0, "end": 390, "activity": "sleep", "place": "home" },
+        { "start": 390, "end": 450, "activity": "morning_routine", "place": "home" },
+        { "start": 450, "end": 540, "activity": "walk", "place": "park" },
+        { "start": 540, "end": 600, "activity": "commute", "place": "city_street" },
+        { "start": 600, "end": 960, "activity": "work", "place": "office" },
+        { "start": 960, "end": 1020, "activity": "commute", "place": "city_street" },
+        { "start": 1020, "end": 1110, "activity": "walk", "place": "park" },
+        { "start": 1110, "end": 1260, "activity": "home_evening", "place": "home" },
+        { "start": 1260, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "saturday": [
+        { "start": 0, "end": 450, "activity": "sleep", "place": "home" },
+        { "start": 450, "end": 540, "activity": "morning_routine", "place": "home" },
+        { "start": 540, "end": 720, "activity": "walk", "place": "park" },
+        { "start": 720, "end": 840, "activity": "lunch", "place": "cafe" },
+        { "start": 840, "end": 1110, "activity": "social", "place": "park" },
+        { "start": 1110, "end": 1260, "activity": "walk", "place": "park" },
+        { "start": 1260, "end": 1440, "activity": "sleep", "place": "home" }
+      ],
+      "sunday": [
+        { "start": 0, "end": 450, "activity": "sleep", "place": "home" },
+        { "start": 450, "end": 570, "activity": "morning_routine", "place": "home" },
+        { "start": 570, "end": 810, "activity": "walk", "place": "park" },
+        { "start": 810, "end": 930, "activity": "lunch", "place": "home" },
+        { "start": 930, "end": 1200, "activity": "family_time", "place": "park" },
+        { "start": 1200, "end": 1440, "activity": "sleep", "place": "home" }
+      ]
+    }
+  },
+  "appearance_palettes": {
+    "skin_colors": ["#F1C7A5", "#DCA77F", "#B97954", "#8B563D", "#684431"],
+    "hair_colors": ["#211A18", "#49352B", "#74543B", "#A17B4F", "#BDB3A5"],
+    "clothes_colors": [
+      ["#315B72", "#E4E8E7", "#344B3E"],
+      ["#76515E", "#E4D6C6", "#36444E"],
+      ["#60764F", "#D5C9AE", "#435064"],
+      ["#A55E42", "#E6DDC9", "#384D5A"],
+      ["#766A92", "#DDD8E2", "#4E625E"]
+    ],
+    "accessories": ["glasses", "scarf", "cap", "backpack", "apron", "work_badge", "shopping_bag", "none"],
+    "height_scale_range": [0.88, 1.12],
+    "seed_rule": "Stable hash of npc id and world day; choose palette entries deterministically."
+  },
+  "archetypes": [
+    {
+      "id": "student",
+      "job_de": "Schüler/in",
+      "age_groups": ["teen", "young_adult"],
+      "gender_mix": ["female", "male"],
+      "model_pool": ["Mage", "Ranger", "Rogue"],
+      "home_place_type": "home",
+      "workplace_place_type": "school",
+      "favorite_place_types": ["school", "park", "cafe"],
+      "schedule_template_id": "student",
+      "variation_minutes": 25,
+      "sunday_policy": "school_closed",
+      "personality": { "friendliness": 0.62, "energy": 0.72, "patience": 0.54, "curiosity": 0.78, "tidiness": 0.58, "talkativeness": 0.66 },
+      "initial_needs": { "energy": 78, "hunger": 34, "social": 54, "fun": 46, "money_need": 76 },
+      "baseline_mood": "neutral",
+      "language_level": "A1",
+      "speech_vocabulary": ["Schule", "Buch", "Freund", "lernen", "Pause", "Hausaufgabe", "Bus", "Kaffee"],
+      "sample_lines": ["Guten Morgen! Ich gehe zur Schule.", "Hast du heute Zeit?", "Ich brauche eine Pause."]
+    },
+    {
+      "id": "teacher",
+      "job_de": "Lehrer/in",
+      "age_groups": ["adult", "older_adult"],
+      "gender_mix": ["female", "male"],
+      "model_pool": ["Mage", "Knight", "Ranger"],
+      "home_place_type": "home",
+      "workplace_place_type": "school",
+      "favorite_place_types": ["school", "bookshop", "cafe"],
+      "schedule_template_id": "school_staff",
+      "variation_minutes": 20,
+      "sunday_policy": "school_closed",
+      "personality": { "friendliness": 0.68, "energy": 0.54, "patience": 0.82, "curiosity": 0.72, "tidiness": 0.84, "talkativeness": 0.58 },
+      "initial_needs": { "energy": 72, "hunger": 28, "social": 48, "fun": 36, "money_need": 32 },
+      "baseline_mood": "neutral",
+      "language_level": "A2",
+      "speech_vocabulary": ["Unterricht", "Schüler", "Frage", "Antwort", "lesen", "schreiben", "richtig", "fleißig"],
+      "sample_lines": ["Guten Morgen, seid ihr bereit?", "Bitte öffne dein Buch.", "Sehr gut, das ist richtig."]
+    },
+    {
+      "id": "jogger",
+      "job_de": "Jogger/in",
+      "age_groups": ["young_adult", "adult", "older_adult"],
+      "gender_mix": ["female", "male", "nonbinary"],
+      "model_pool": ["Ranger", "Rogue", "Mage"],
+      "home_place_type": "home",
+      "workplace_place_type": null,
+      "favorite_place_types": ["park", "city_street", "cafe"],
+      "schedule_template_id": "active_morning",
+      "variation_minutes": 35,
+      "weather_preferences": { "rain_activity_multiplier": 0.45, "clear_activity_multiplier": 1.15 },
+      "personality": { "friendliness": 0.7, "energy": 0.94, "patience": 0.56, "curiosity": 0.58, "tidiness": 0.61, "talkativeness": 0.48 },
+      "initial_needs": { "energy": 90, "hunger": 42, "social": 36, "fun": 66, "money_need": 48 },
+      "baseline_mood": "excited",
+      "language_level": "A1",
+      "speech_vocabulary": ["laufen", "schnell", "langsam", "Wasser", "Park", "gesund", "stark", "müde"],
+      "sample_lines": ["Guten Morgen! Läufst du auch?", "Das Wetter ist heute schön.", "Ich brauche Wasser."]
+    },
+    {
+      "id": "shop_owner",
+      "job_de": "Ladenbesitzer/in",
+      "age_groups": ["adult", "older_adult"],
+      "gender_mix": ["female", "male"],
+      "model_pool": ["Knight", "Mage", "Rogue"],
+      "home_place_type": "home",
+      "workplace_place_type": "supermarket",
+      "favorite_place_types": ["supermarket", "bakery", "cafe"],
+      "schedule_template_id": "retail_shift",
+      "variation_minutes": 30,
+      "sunday_policy": "closed",
+      "personality": { "friendliness": 0.74, "energy": 0.66, "patience": 0.64, "curiosity": 0.57, "tidiness": 0.86, "talkativeness": 0.61 },
+      "initial_needs": { "energy": 68, "hunger": 32, "social": 56, "fun": 32, "money_need": 43 },
+      "baseline_mood": "neutral",
+      "language_level": "A2",
+      "speech_vocabulary": ["Geschäft", "offen", "geschlossen", "frisch", "Preis", "Kunde", "helfen", "bezahlen"],
+      "sample_lines": ["Guten Tag, unser Geschäft ist offen.", "Kann ich Ihnen helfen?", "Heute ist der Laden geschlossen."]
+    },
+    {
+      "id": "cashier",
+      "job_de": "Kassierer/in",
+      "age_groups": ["young_adult", "adult", "older_adult"],
+      "gender_mix": ["female", "male"],
+      "model_pool": ["Rogue", "Ranger", "Knight"],
+      "home_place_type": "home",
+      "workplace_place_type": "supermarket",
+      "favorite_place_types": ["supermarket", "cafe", "home"],
+      "schedule_template_id": "retail_shift",
+      "variation_minutes": 35,
+      "sunday_policy": "closed",
+      "personality": { "friendliness": 0.7, "energy": 0.55, "patience": 0.67, "curiosity": 0.42, "tidiness": 0.79, "talkativeness": 0.53 },
+      "initial_needs": { "energy": 70, "hunger": 38, "social": 46, "fun": 37, "money_need": 58 },
+      "baseline_mood": "neutral",
+      "language_level": "A1",
+      "speech_vocabulary": ["Kasse", "bar", "Karte", "Tüte", "Bon", "Euro", "danke", "nächster"],
+      "sample_lines": ["Guten Tag! Haben Sie eine Karte?", "Das macht zehn Euro.", "Möchten Sie eine Tüte?"]
+    },
+    {
+      "id": "waiter",
+      "job_de": "Kellner/in",
+      "age_groups": ["young_adult", "adult"],
+      "gender_mix": ["female", "male", "nonbinary"],
+      "model_pool": ["Rogue", "Ranger", "Mage"],
+      "home_place_type": "home",
+      "workplace_place_type": "restaurant",
+      "favorite_place_types": ["restaurant", "cafe", "city_street"],
+      "schedule_template_id": "restaurant_shift",
+      "variation_minutes": 30,
+      "sunday_policy": "reduced_hours",
+      "personality": { "friendliness": 0.84, "energy": 0.78, "patience": 0.71, "curiosity": 0.52, "tidiness": 0.73, "talkativeness": 0.74 },
+      "initial_needs": { "energy": 76, "hunger": 36, "social": 61, "fun": 43, "money_need": 61 },
+      "baseline_mood": "happy",
+      "language_level": "A2",
+      "speech_vocabulary": ["Speisekarte", "bestellen", "Tisch", "Getränk", "bringen", "Rechnung", "lecker", "bitte"],
+      "sample_lines": ["Guten Abend! Haben Sie reserviert?", "Was möchten Sie bestellen?", "Ich bringe die Rechnung."]
+    },
+    {
+      "id": "cook",
+      "job_de": "Koch/Köchin",
+      "age_groups": ["young_adult", "adult", "older_adult"],
+      "gender_mix": ["female", "male"],
+      "model_pool": ["Barbarian", "Knight", "Ranger"],
+      "home_place_type": "home",
+      "workplace_place_type": "restaurant",
+      "favorite_place_types": ["restaurant", "bakery", "supermarket"],
+      "schedule_template_id": "restaurant_shift",
+      "variation_minutes": 30,
+      "sunday_policy": "reduced_hours",
+      "personality": { "friendliness": 0.58, "energy": 0.75, "patience": 0.55, "curiosity": 0.7, "tidiness": 0.88, "talkativeness": 0.4 },
+      "initial_needs": { "energy": 67, "hunger": 30, "social": 39, "fun": 48, "money_need": 47 },
+      "baseline_mood": "neutral",
+      "language_level": "A2",
+      "speech_vocabulary": ["kochen", "Küche", "Gemüse", "Fleisch", "Salz", "heiß", "fertig", "Teller"],
+      "sample_lines": ["Das Essen ist gleich fertig.", "Bitte bring das Gemüse.", "Die Suppe ist heute heiß."]
+    },
+    {
+      "id": "bus_driver",
+      "job_de": "Busfahrer/in",
+      "age_groups": ["adult", "older_adult"],
+      "gender_mix": ["female", "male"],
+      "model_pool": ["Knight", "Ranger", "Barbarian"],
+      "home_place_type": "home",
+      "workplace_place_type": "bus_stop",
+      "favorite_place_types": ["bus_stop", "cafe", "park"],
+      "schedule_template_id": "bus_driver",
+      "variation_minutes": 20,
+      "personality": { "friendliness": 0.64, "energy": 0.66, "patience": 0.78, "curiosity": 0.44, "tidiness": 0.73, "talkativeness": 0.46 },
+      "initial_needs": { "energy": 68, "hunger": 33, "social": 45, "fun": 35, "money_need": 42 },
+      "baseline_mood": "neutral",
+      "language_level": "A1",
+      "speech_vocabulary": ["Bus", "Haltestelle", "einsteigen", "aussteigen", "Fahrkarte", "links", "rechts", "warten"],
+      "sample_lines": ["Bitte steigen Sie ein.", "Der Bus fährt gleich.", "Die nächste Haltestelle ist hier."]
+    },
+    {
+      "id": "police_officer",
+      "job_de": "Polizist/in",
+      "age_groups": ["adult", "older_adult"],
+      "gender_mix": ["female", "male"],
+      "model_pool": ["Knight", "Ranger", "Barbarian"],
+      "home_place_type": "home",
+      "workplace_place_type": "police_station",
+      "favorite_place_types": ["police_station", "city_street", "cafe"],
+      "schedule_template_id": "night_shift",
+      "variation_minutes": 35,
+      "personality": { "friendliness": 0.6, "energy": 0.68, "patience": 0.71, "curiosity": 0.65, "tidiness": 0.77, "talkativeness": 0.42 },
+      "initial_needs": { "energy": 70, "hunger": 34, "social": 42, "fun": 35, "money_need": 39 },
+      "baseline_mood": "neutral",
+      "language_level": "A2",
+      "speech_vocabulary": ["Polizei", "Hilfe", "sicher", "Straße", "warten", "Person", "fragen", "bitte"],
+      "sample_lines": ["Guten Abend. Ist alles in Ordnung?", "Brauchen Sie Hilfe?", "Bitte bleiben Sie hier."]
+    },
+    {
+      "id": "pharmacist",
+      "job_de": "Apotheker/in",
+      "age_groups": ["adult", "older_adult"],
+      "gender_mix": ["female", "male"],
+      "model_pool": ["Mage", "Rogue", "Knight"],
+      "home_place_type": "home",
+      "workplace_place_type": "pharmacy",
+      "favorite_place_types": ["pharmacy", "cafe", "home"],
+      "schedule_template_id": "pharmacy_shift",
+      "variation_minutes": 25,
+      "sunday_policy": "closed",
+      "personality": { "friendliness": 0.81, "energy": 0.54, "patience": 0.86, "curiosity": 0.71, "tidiness": 0.9, "talkativeness": 0.59 },
+      "initial_needs": { "energy": 73, "hunger": 35, "social": 47, "fun": 38, "money_need": 37 },
+      "baseline_mood": "neutral",
+      "language_level": "A2",
+      "speech_vocabulary": ["Apotheke", "Medizin", "Kopf", "Schmerz", "helfen", "nehmen", "gesund", "Wasser"],
+      "sample_lines": ["Guten Tag, was fehlt Ihnen?", "Nehmen Sie diese Medizin.", "Trinken Sie bitte viel Wasser."]
+    },
+    {
+      "id": "retiree",
+      "job_de": "Rentner/in",
+      "age_groups": ["senior"],
+      "gender_mix": ["female", "male"],
+      "model_pool": ["Knight", "Mage", "Rogue"],
+      "home_place_type": "home",
+      "workplace_place_type": null,
+      "favorite_place_types": ["park", "cafe", "supermarket"],
+      "schedule_template_id": "retiree",
+      "variation_minutes": 40,
+      "personality": { "friendliness": 0.74, "energy": 0.42, "patience": 0.87, "curiosity": 0.68, "tidiness": 0.78, "talkativeness": 0.75 },
+      "initial_needs": { "energy": 72, "hunger": 29, "social": 58, "fun": 49, "money_need": 30 },
+      "baseline_mood": "happy",
+      "language_level": "A1",
+      "speech_vocabulary": ["früher", "heute", "Garten", "Zeit", "spazieren", "Nachbar", "Kuchen", "Geschichte"],
+      "sample_lines": ["Guten Tag, wie geht es Ihnen?", "Ich gehe gern spazieren.", "Möchten Sie ein Stück Kuchen?"]
+    },
+    {
+      "id": "parent_with_child",
+      "job_de": "Elternteil",
+      "age_groups": ["adult"],
+      "gender_mix": ["female", "male"],
+      "model_pool": ["Ranger", "Rogue", "Knight"],
+      "home_place_type": "home",
+      "workplace_place_type": "office",
+      "favorite_place_types": ["school", "park", "supermarket"],
+      "schedule_template_id": "parent_school",
+      "variation_minutes": 30,
+      "personality": { "friendliness": 0.76, "energy": 0.65, "patience": 0.67, "curiosity": 0.61, "tidiness": 0.64, "talkativeness": 0.57 },
+      "initial_needs": { "energy": 66, "hunger": 35, "social": 55, "fun": 42, "money_need": 59 },
+      "baseline_mood": "neutral",
+      "language_level": "A2",
+      "speech_vocabulary": ["Kind", "Schule", "abholen", "Einkauf", "Familie", "essen", "müde", "zusammen"],
+      "sample_lines": ["Wir gehen jetzt zur Schule.", "Bitte warte hier auf mich.", "Was möchtest du essen?"]
+    },
+    {
+      "id": "delivery_worker",
+      "job_de": "Lieferfahrer/in",
+      "age_groups": ["young_adult", "adult"],
+      "gender_mix": ["female", "male"],
+      "model_pool": ["Ranger", "Rogue", "Barbarian"],
+      "home_place_type": "home",
+      "workplace_place_type": "delivery_hub",
+      "favorite_place_types": ["delivery_hub", "restaurant", "city_street"],
+      "schedule_template_id": "delivery_route",
+      "variation_minutes": 35,
+      "personality": { "friendliness": 0.67, "energy": 0.85, "patience": 0.49, "curiosity": 0.6, "tidiness": 0.56, "talkativeness": 0.46 },
+      "initial_needs": { "energy": 82, "hunger": 39, "social": 38, "fun": 45, "money_need": 68 },
+      "baseline_mood": "neutral",
+      "language_level": "A1",
+      "speech_vocabulary": ["Paket", "bringen", "Adresse", "Tür", "warten", "heute", "schnell", "danke"],
+      "sample_lines": ["Ich bringe ein Paket.", "Sind Sie zu Hause?", "Das Paket ist für Sie."]
+    },
+    {
+      "id": "office_worker",
+      "job_de": "Büroangestellte/r",
+      "age_groups": ["young_adult", "adult", "older_adult"],
+      "gender_mix": ["female", "male", "nonbinary"],
+      "model_pool": ["Mage", "Knight", "Rogue"],
+      "home_place_type": "home",
+      "workplace_place_type": "office",
+      "favorite_place_types": ["office", "cafe", "park"],
+      "schedule_template_id": "office_worker",
+      "variation_minutes": 30,
+      "personality": { "friendliness": 0.63, "energy": 0.52, "patience": 0.61, "curiosity": 0.58, "tidiness": 0.76, "talkativeness": 0.48 },
+      "initial_needs": { "energy": 70, "hunger": 38, "social": 43, "fun": 37, "money_need": 44 },
+      "baseline_mood": "neutral",
+      "language_level": "A2",
+      "speech_vocabulary": ["Arbeit", "Büro", "Termin", "Telefon", "E-Mail", "Pause", "Kollege", "fertig"],
+      "sample_lines": ["Ich habe heute viele Termine.", "Machen wir zusammen eine Pause?", "Die Arbeit ist jetzt fertig."]
+    },
+    {
+      "id": "tourist",
+      "job_de": "Tourist/in",
+      "age_groups": ["young_adult", "adult", "older_adult"],
+      "gender_mix": ["female", "male", "nonbinary"],
+      "model_pool": ["Mage", "Ranger", "Rogue", "Knight"],
+      "home_place_type": "home",
+      "workplace_place_type": null,
+      "favorite_place_types": ["museum", "city_street", "restaurant", "cafe"],
+      "schedule_template_id": "tourist_day",
+      "variation_minutes": 40,
+      "personality": { "friendliness": 0.78, "energy": 0.71, "patience": 0.64, "curiosity": 0.94, "tidiness": 0.54, "talkativeness": 0.72 },
+      "initial_needs": { "energy": 80, "hunger": 44, "social": 54, "fun": 68, "money_need": 37 },
+      "baseline_mood": "excited",
+      "language_level": "A1",
+      "speech_vocabulary": ["Stadt", "Karte", "Foto", "Museum", "schön", "wo", "links", "danke"],
+      "sample_lines": ["Entschuldigung, wo ist das Museum?", "Die Stadt ist sehr schön.", "Können Sie ein Foto machen?"]
+    },
+    {
+      "id": "artist_musician",
+      "job_de": "Künstler/in und Musiker/in",
+      "age_groups": ["young_adult", "adult"],
+      "gender_mix": ["female", "male", "nonbinary"],
+      "model_pool": ["Mage", "Rogue", "Ranger"],
+      "home_place_type": "home",
+      "workplace_place_type": "city_street",
+      "favorite_place_types": ["city_street", "park", "cafe", "museum"],
+      "schedule_template_id": "artist_flexible",
+      "variation_minutes": 40,
+      "personality": { "friendliness": 0.72, "energy": 0.64, "patience": 0.58, "curiosity": 0.9, "tidiness": 0.43, "talkativeness": 0.78 },
+      "initial_needs": { "energy": 74, "hunger": 38, "social": 51, "fun": 73, "money_need": 70 },
+      "baseline_mood": "excited",
+      "language_level": "A2",
+      "speech_vocabulary": ["Musik", "spielen", "singen", "Bild", "Farbe", "Idee", "schön", "hören"],
+      "sample_lines": ["Ich spiele heute ein neues Lied.", "Welche Farbe gefällt dir?", "Hörst du gern Musik?"]
+    },
+    {
+      "id": "gardener_cleaner",
+      "job_de": "Gärtner/in und Straßenreiniger/in",
+      "age_groups": ["adult", "older_adult"],
+      "gender_mix": ["female", "male"],
+      "model_pool": ["Barbarian", "Knight", "Ranger"],
+      "home_place_type": "home",
+      "workplace_place_type": "city_street",
+      "favorite_place_types": ["park", "city_street", "bakery"],
+      "schedule_template_id": "municipal_shift",
+      "variation_minutes": 25,
+      "personality": { "friendliness": 0.65, "energy": 0.78, "patience": 0.72, "curiosity": 0.46, "tidiness": 0.95, "talkativeness": 0.43 },
+      "initial_needs": { "energy": 75, "hunger": 37, "social": 41, "fun": 39, "money_need": 46 },
+      "baseline_mood": "neutral",
+      "language_level": "A1",
+      "speech_vocabulary": ["Baum", "Blume", "Straße", "sauber", "Wasser", "arbeiten", "Park", "morgen"],
+      "sample_lines": ["Der Park ist heute sauber.", "Die Blumen brauchen Wasser.", "Ich arbeite bis Mittag."]
+    },
+    {
+      "id": "taxi_driver",
+      "job_de": "Taxifahrer/in",
+      "age_groups": ["adult", "older_adult"],
+      "gender_mix": ["female", "male"],
+      "model_pool": ["Knight", "Rogue", "Barbarian"],
+      "home_place_type": "home",
+      "workplace_place_type": "taxi_stand",
+      "favorite_place_types": ["taxi_stand", "restaurant", "city_street"],
+      "schedule_template_id": "taxi_shift",
+      "variation_minutes": 40,
+      "personality": { "friendliness": 0.73, "energy": 0.7, "patience": 0.63, "curiosity": 0.69, "tidiness": 0.59, "talkativeness": 0.84 },
+      "initial_needs": { "energy": 72, "hunger": 40, "social": 63, "fun": 42, "money_need": 57 },
+      "baseline_mood": "neutral",
+      "language_level": "A1",
+      "speech_vocabulary": ["Taxi", "fahren", "Bahnhof", "Adresse", "hier", "dort", "schnell", "Euro"],
+      "sample_lines": ["Wohin möchten Sie fahren?", "Das Taxi ist hier.", "Wir sind gleich da."]
+    },
+    {
+      "id": "barista",
+      "job_de": "Barista",
+      "age_groups": ["young_adult", "adult"],
+      "gender_mix": ["female", "male", "nonbinary"],
+      "model_pool": ["Rogue", "Mage", "Ranger"],
+      "home_place_type": "home",
+      "workplace_place_type": "cafe",
+      "favorite_place_types": ["cafe", "bakery", "restaurant"],
+      "schedule_template_id": "cafe_shift",
+      "variation_minutes": 30,
+      "personality": { "friendliness": 0.9, "energy": 0.75, "patience": 0.71, "curiosity": 0.68, "tidiness": 0.8, "talkativeness": 0.82 },
+      "initial_needs": { "energy": 79, "hunger": 31, "social": 68, "fun": 48, "money_need": 53 },
+      "baseline_mood": "happy",
+      "language_level": "A1",
+      "speech_vocabulary": ["Kaffee", "Milch", "Tasse", "Zucker", "heiß", "kalt", "nehmen", "bitte"],
+      "sample_lines": ["Guten Morgen! Was möchten Sie?", "Mit Milch und Zucker?", "Ihr Kaffee ist fertig."]
+    },
+    {
+      "id": "baker",
+      "job_de": "Bäcker/in",
+      "age_groups": ["adult", "older_adult"],
+      "gender_mix": ["female", "male"],
+      "model_pool": ["Barbarian", "Knight", "Rogue"],
+      "home_place_type": "home",
+      "workplace_place_type": "bakery",
+      "favorite_place_types": ["bakery", "cafe", "home"],
+      "schedule_template_id": "early_retail",
+      "variation_minutes": 20,
+      "sunday_policy": "closed",
+      "personality": { "friendliness": 0.74, "energy": 0.86, "patience": 0.66, "curiosity": 0.53, "tidiness": 0.9, "talkativeness": 0.55 },
+      "initial_needs": { "energy": 72, "hunger": 30, "social": 45, "fun": 39, "money_need": 47 },
+      "baseline_mood": "neutral",
+      "language_level": "A1",
+      "speech_vocabulary": ["Brot", "Brötchen", "Kuchen", "backen", "frisch", "Mehl", "Ofen", "warm"],
+      "sample_lines": ["Das Brot ist frisch.", "Die Brötchen sind noch warm.", "Möchten Sie ein Stück Kuchen?"]
+    },
+    {
+      "id": "fitness_trainer",
+      "job_de": "Fitnesstrainer/in",
+      "age_groups": ["young_adult", "adult"],
+      "gender_mix": ["female", "male"],
+      "model_pool": ["Ranger", "Barbarian", "Knight"],
+      "home_place_type": "home",
+      "workplace_place_type": "gym",
+      "favorite_place_types": ["gym", "park", "cafe"],
+      "schedule_template_id": "fitness_coach",
+      "variation_minutes": 35,
+      "personality": { "friendliness": 0.82, "energy": 0.97, "patience": 0.75, "curiosity": 0.67, "tidiness": 0.74, "talkativeness": 0.71 },
+      "initial_needs": { "energy": 91, "hunger": 42, "social": 59, "fun": 71, "money_need": 42 },
+      "baseline_mood": "excited",
+      "language_level": "A2",
+      "speech_vocabulary": ["Training", "stark", "Körper", "Bewegung", "Wasser", "Pause", "üben", "Ziel"],
+      "sample_lines": ["Noch drei Wiederholungen!", "Trink bitte etwas Wasser.", "Sehr gut, du wirst stärker."]
+    },
+    {
+      "id": "cyclist",
+      "job_de": "Radfahrer/in",
+      "age_groups": ["teen", "young_adult", "adult"],
+      "gender_mix": ["female", "male", "nonbinary"],
+      "model_pool": ["Ranger", "Rogue", "Mage"],
+      "home_place_type": "home",
+      "workplace_place_type": null,
+      "favorite_place_types": ["city_street", "park", "cafe"],
+      "schedule_template_id": "active_morning",
+      "variation_minutes": 40,
+      "weather_preferences": { "rain_activity_multiplier": 0.5, "clear_activity_multiplier": 1.2 },
+      "personality": { "friendliness": 0.66, "energy": 0.9, "patience": 0.5, "curiosity": 0.73, "tidiness": 0.51, "talkativeness": 0.52 },
+      "initial_needs": { "energy": 84, "hunger": 43, "social": 41, "fun": 71, "money_need": 52 },
+      "baseline_mood": "happy",
+      "language_level": "A1",
+      "speech_vocabulary": ["Fahrrad", "fahren", "Weg", "Straße", "langsam", "schnell", "Helm", "Park"],
+      "sample_lines": ["Ich fahre mit dem Fahrrad.", "Der Weg ist hier frei.", "Bitte fahr langsam."]
+    },
+    {
+      "id": "dog_walker",
+      "job_de": "Hundebesitzer/in",
+      "age_groups": ["young_adult", "adult", "older_adult"],
+      "gender_mix": ["female", "male"],
+      "model_pool": ["Ranger", "Rogue", "Knight"],
+      "home_place_type": "home",
+      "workplace_place_type": "office",
+      "favorite_place_types": ["park", "city_street", "cafe"],
+      "schedule_template_id": "dog_walk",
+      "variation_minutes": 30,
+      "weather_preferences": { "rain_activity_multiplier": 0.62, "clear_activity_multiplier": 1.12 },
+      "personality": { "friendliness": 0.83, "energy": 0.73, "patience": 0.8, "curiosity": 0.7, "tidiness": 0.62, "talkativeness": 0.7 },
+      "initial_needs": { "energy": 76, "hunger": 37, "social": 58, "fun": 68, "money_need": 46 },
+      "baseline_mood": "happy",
+      "language_level": "A1",
+      "speech_vocabulary": ["Hund", "Leine", "laufen", "Park", "warten", "sitzen", "Wasser", "gut"],
+      "sample_lines": ["Mein Hund heißt Bruno.", "Wir gehen in den Park.", "Bruno, bitte warte hier."]
+    },
+    {
+      "id": "night_shift_worker",
+      "job_de": "Nachtschichtarbeiter/in",
+      "age_groups": ["young_adult", "adult"],
+      "gender_mix": ["female", "male"],
+      "model_pool": ["Knight", "Mage", "Rogue"],
+      "home_place_type": "home",
+      "workplace_place_type": "restaurant",
+      "favorite_place_types": ["home", "cafe", "city_street"],
+      "schedule_template_id": "night_hospitality",
+      "variation_minutes": 35,
+      "personality": { "friendliness": 0.57, "energy": 0.54, "patience": 0.63, "curiosity": 0.52, "tidiness": 0.66, "talkativeness": 0.38 },
+      "initial_needs": { "energy": 61, "hunger": 42, "social": 34, "fun": 38, "money_need": 64 },
+      "baseline_mood": "tired",
+      "language_level": "A1",
+      "speech_vocabulary": ["Nacht", "arbeiten", "müde", "Kaffee", "Pause", "ruhig", "spät", "morgen"],
+      "sample_lines": ["Ich arbeite heute Nacht.", "Jetzt brauche ich Kaffee.", "Die Straße ist ganz ruhig."]
+    },
+    {
+      "id": "mechanic",
+      "job_de": "Mechaniker/in",
+      "age_groups": ["young_adult", "adult", "older_adult"],
+      "gender_mix": ["female", "male"],
+      "model_pool": ["Barbarian", "Knight", "Ranger"],
+      "home_place_type": "home",
+      "workplace_place_type": "workshop",
+      "favorite_place_types": ["workshop", "taxi_stand", "cafe"],
+      "schedule_template_id": "workshop_shift",
+      "variation_minutes": 30,
+      "personality": { "friendliness": 0.61, "energy": 0.72, "patience": 0.7, "curiosity": 0.75, "tidiness": 0.77, "talkativeness": 0.47 },
+      "initial_needs": { "energy": 74, "hunger": 38, "social": 39, "fun": 44, "money_need": 50 },
+      "baseline_mood": "neutral",
+      "language_level": "A2",
+      "speech_vocabulary": ["Auto", "Motor", "Rad", "reparieren", "kaputt", "Werkzeug", "fertig", "fahren"],
+      "sample_lines": ["Das Auto ist fast fertig.", "Der Motor ist kaputt.", "Ich repariere das Fahrrad."]
+    }
+  ]
+}
