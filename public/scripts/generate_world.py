@@ -11,7 +11,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
-from generate_city import City, MATERIALS, write_glb
+from generate_city import City, MATERIALS, write_glb, compress_glb
 
 ROOT = SCRIPT_DIR.parent
 WORLD_DIR = ROOT / "world"
@@ -514,6 +514,8 @@ def main():
                 builder = build_chunk(cx, cz, features, detail)
                 write_glb(target, builder.visual, include_textures=False, materials=WORLD_MATERIALS)
                 write_glb(collision_target, builder.collision, collision=True, materials=WORLD_MATERIALS)
+                compress_glb(target)
+                compress_glb(collision_target)
             chunks.append({
                 "id": f"c{cx}_{cz}",
                 "cx": cx,

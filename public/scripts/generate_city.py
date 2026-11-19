@@ -5,6 +5,7 @@ import json
 import math
 import random
 import struct
+import subprocess
 import zlib
 from pathlib import Path
 
@@ -953,12 +954,25 @@ def write_glb(path, geometry, collision=False, include_textures=True, materials=
         file.write(binary)
 
 
+def compress_glb(path):
+    compressed = path.with_name(path.stem + ".draco.glb")
+    subprocess.run(
+        ["npx", "--yes", "@gltf-transform/cli", "draco", str(path), str(compressed)],
+        check=True,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
+    compressed.replace(path)
+
+
 def main():
     GROUND_DIR.mkdir(parents=True, exist_ok=True)
     city = City()
     visual, collision = city.build()
     write_glb(GROUND_DIR / "LinguaCity.glb", visual)
     write_glb(GROUND_DIR / "LinguaCity_Collision.glb", collision, collision=True)
+    compress_glb(GROUND_DIR / "LinguaCity.glb")
+    compress_glb(GROUND_DIR / "LinguaCity_Collision.glb")
     print(f"Generated {len(visual.vertices)} visual materials and "
           f"{len(city.buildings)} buildings.")
 

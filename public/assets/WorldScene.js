@@ -95,6 +95,15 @@ const LEVEL_STARTS = {
   5: { x: 0, y: 0, z: 0 }
 };
 
+function readCitySpawn() {
+  if (typeof window === 'undefined') return LEVEL_STARTS[1];
+  const raw = new URLSearchParams(window.location.search).get('spawn');
+  if (!raw) return LEVEL_STARTS[1];
+  const [x, z] = raw.split(',').map(Number);
+  if (!Number.isFinite(x) || !Number.isFinite(z)) return LEVEL_STARTS[1];
+  return { x, y: 4, z };
+}
+
 const CITY_MAP = {
   width: 220,
   height: 260,
@@ -1036,6 +1045,7 @@ function LevelWorld({ level, onPositionsReady, isPaused }) {
 
 function CityWorld({ onPositionsReady, isPaused }) {
   const [worldProfile, setWorldProfile] = React.useState(null);
+  const spawnPoint = React.useMemo(readCitySpawn, []);
   const fogNear = worldProfile?.fog_near_m ?? 260;
   const fogFar = worldProfile?.fog_far_m ?? 760;
   return h(React.Fragment, null,
@@ -1065,7 +1075,7 @@ function CityWorld({ onPositionsReady, isPaused }) {
       '/Grounds/LinguaCity.glb',
       '/Grounds/LinguaCity_Collision.glb',
       'city_Collision',
-      LEVEL_STARTS[1],
+      spawnPoint,
       onPositionsReady
     ),
     h(WorldStreamer, { onProfileChange: setWorldProfile }),
