@@ -7,6 +7,7 @@ import random
 import struct
 import subprocess
 import zlib
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 
@@ -965,14 +966,20 @@ def compress_glb(path):
     compressed.replace(path)
 
 
+def compress_glbs(paths):
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        list(executor.map(compress_glb, paths))
+
+
 def main():
     GROUND_DIR.mkdir(parents=True, exist_ok=True)
     city = City()
     visual, collision = city.build()
-    write_glb(GROUND_DIR / "LinguaCity.glb", visual)
-    write_glb(GROUND_DIR / "LinguaCity_Collision.glb", collision, collision=True)
-    compress_glb(GROUND_DIR / "LinguaCity.glb")
-    compress_glb(GROUND_DIR / "LinguaCity_Collision.glb")
+    visual_path = GROUND_DIR / "LinguaCity.glb"
+    collision_path = GROUND_DIR / "LinguaCity_Collision.glb"
+    write_glb(visual_path, visual)
+    write_glb(collision_path, collision, collision=True)
+    compress_glbs([visual_path, collision_path])
     print(f"Generated {len(visual.vertices)} visual materials and "
           f"{len(city.buildings)} buildings.")
 

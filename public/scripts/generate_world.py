@@ -11,7 +11,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
-from generate_city import City, MATERIALS, write_glb, compress_glb
+from generate_city import City, MATERIALS, write_glb, compress_glbs
 
 ROOT = SCRIPT_DIR.parent
 WORLD_DIR = ROOT / "world"
@@ -279,6 +279,7 @@ def generate_features():
     lamps = []
     squares = []
     churches = []
+    water_bodies = []
 
     for village in VILLAGES:
         vx, vz = village["x"], village["z"]
@@ -367,6 +368,12 @@ def generate_features():
                     continue
                 trees.append({"x": px, "z": pz, "scale": 0.78 + rng.random() * 0.6})
 
+        water_bodies.append({
+            "x": (forest["min_x"] + forest["max_x"]) / 2,
+            "z": (forest["min_z"] + forest["max_z"]) / 2,
+            "radius": 18,
+        })
+
     for road in ROADS:
         for distance in range(int(road["low"]), int(road["high"]), 165):
             if road["axis"] == "z":
@@ -387,6 +394,7 @@ def generate_features():
         "lamps": lamps,
         "squares": squares,
         "churches": churches,
+        "water_bodies": water_bodies,
     }
 
 
@@ -428,6 +436,15 @@ def build_chunk(cx, cz, features, detail):
         clipped = clip_road(road, chunk)
         if clipped:
             builder.street(clipped[0], clipped[1], clipped[2], clipped[3])
+
+    for water in features.get("water_bodies", []):
+        if not in_chunk(water, chunk):
+            continue
+        builder.visual.box(
+            "water",
+            (water["x"], 0.11, water["z"]),
+            (water["radius"], 0.12, water["radius"]),
+        )
 
     for square in features["squares"]:
         if in_chunk(square, chunk):
@@ -504,6 +521,7 @@ def main():
     CHUNK_DIR.mkdir(parents=True, exist_ok=True)
     features = generate_features()
     chunks = []
+    glb_paths = []
     for cz in range(GRID):
         for cx in range(GRID):
             chunk = chunk_bounds(cx, cz)
@@ -514,8 +532,8 @@ def main():
                 builder = build_chunk(cx, cz, features, detail)
                 write_glb(target, builder.visual, include_textures=False, materials=WORLD_MATERIALS)
                 write_glb(collision_target, builder.collision, collision=True, materials=WORLD_MATERIALS)
-                compress_glb(target)
-                compress_glb(collision_target)
+                glb_paths.append(target)
+                glb_paths.append(collision_target)
             chunks.append({
                 "id": f"c{cx}_{cz}",
                 "cx": cx,
@@ -535,6 +553,7 @@ def main():
                 },
                 "biome": "forest" if forest_overlap(chunk) else "countryside",
             })
+    compress_glbs(glb_paths)
 
     manifest = {
         "schema_version": 1,
@@ -573,6 +592,7 @@ def main():
             "fields": len(features["fields"]),
             "villages": len(VILLAGES),
             "farms": len(FARMS),
+            "water_bodies": len(features["water_bodies"]),
         },
         "chunks": chunks,
     }
