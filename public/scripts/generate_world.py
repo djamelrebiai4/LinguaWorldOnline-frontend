@@ -565,7 +565,7 @@ def main():
         "origin": {"x": -WORLD_HALF, "z": -WORLD_HALF},
         "bounds": {"min_x": -WORLD_HALF, "max_x": WORLD_HALF,
                    "min_z": -WORLD_HALF, "max_z": WORLD_HALF},
-        "spawn": {"x": 30, "y": 0, "z": 95},
+        "spawn": {"x": 39, "y": 0, "z": 118},
         "quality": {
             "high": {"high_radius_m": 820, "low_radius_m": 1450,
                      "fog_near_m": 260, "fog_far_m": 1580, "player_limit": 24},
@@ -576,7 +576,7 @@ def main():
         },
         "landmarks": [
             {"id": "city", "name": "LinguaCity", "kind": "city",
-             "x": 0, "z": 30},
+             "x": 0, "z": 30, "bounds": dict(CITY_BOUNDS)},
             *[{"id": village["id"], "name": village["name"], "kind": "village",
                "x": village["x"], "z": village["z"]} for village in VILLAGES],
             *[{"id": farm["id"], "name": farm["name"], "kind": "farm",

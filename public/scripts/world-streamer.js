@@ -198,7 +198,7 @@ export default function WorldStreamer({ enabled = true, onProfileChange }) {
 
   React.useEffect(() => {
     let live = true;
-    fetch(MANIFEST_URL, { cache: 'force-cache' })
+    fetch(MANIFEST_URL, { cache: 'no-cache' })
       .then((response) => {
         if (!response.ok) {
           throw new Error(`World manifest request failed: ${response.status}`);

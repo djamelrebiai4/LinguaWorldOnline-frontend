@@ -721,47 +721,112 @@ def png_chunk(chunk_type, data):
             + struct.pack(">I", zlib.crc32(chunk_type + data) & 0xFFFFFFFF))
 
 
-def texture_png(kind, seed, width=128, height=128):
-    rng = random.Random(seed)
+def _hash01(x, y, seed):
+    value = (x * 374761393 + y * 668265263 + seed * 1442695041) & 0xFFFFFFFF
+    value = ((value ^ (value >> 13)) * 1274126177) & 0xFFFFFFFF
+    return ((value ^ (value >> 16)) & 0xFFFFFFFF) / 0xFFFFFFFF
+
+
+def _smoothstep(value):
+    return value * value * (3 - 2 * value)
+
+
+def _value_noise(x, y, seed, cells, width, height):
+    gx, gy = x * cells / width, y * cells / height
+    x0, y0 = int(gx), int(gy)
+    fx, fy = gx - x0, gy - y0
+    sx, sy = _smoothstep(fx), _smoothstep(fy)
+    n00 = _hash01(x0 % cells, y0 % cells, seed)
+    n10 = _hash01((x0 + 1) % cells, y0 % cells, seed)
+    n01 = _hash01(x0 % cells, (y0 + 1) % cells, seed)
+    n11 = _hash01((x0 + 1) % cells, (y0 + 1) % cells, seed)
+    return (n00 * (1 - sx) * (1 - sy) + n10 * sx * (1 - sy)
+            + n01 * (1 - sx) * sy + n11 * sx * sy)
+
+
+def _clamp_channel(value):
+    return max(0, min(255, int(value)))
+
+
+def texture_png(kind, seed, width=256, height=256):
     pixels = bytearray()
     for y in range(height):
         for x in range(width):
-            noise = rng.randint(-7, 7)
-            if kind == "brick":
-                row = y // 16
-                offset = 32 if row % 2 else 0
-                mortar = y % 16 < 2 or (x + offset) % 48 < 2
-                color = (173, 91, 68) if not mortar else (200, 187, 165)
-            elif kind == "roof":
-                row = y // 14
-                offset = 25 if row % 2 else 0
-                tile_edge = y % 14 < 2 or (x + offset) % 32 < 2
-                color = (100, 75, 64) if not tile_edge else (132, 105, 88)
-            elif kind == "asphalt":
-                fleck = rng.randint(-19, 19)
-                color = (69 + fleck, 74 + fleck, 73 + fleck)
+            fine = _hash01(x, y, seed)
+            coarse = _value_noise(x, y, seed + 17, 16, width, height)
+            mid = _value_noise(x, y, seed + 31, 48, width, height)
+            if kind == "asphalt":
+                base = 99 + (coarse - 0.5) * 20 + (mid - 0.5) * 12
+                if fine < 0.075:
+                    base += 34
+                elif fine > 0.945:
+                    base -= 26
+                color = (base, base + 2, base + 1)
             elif kind == "stone":
-                seam = x % 32 < 2 or y % 24 < 2
-                base = 155 if not seam else 122
-                color = (base + 4, base + 2, base - 4)
+                course, block = 32, 64
+                row = y // course
+                offset = block // 2 if row % 2 else 0
+                sx = (x + offset) % block
+                seam = y % course < 3 or sx < 3
+                tone = (coarse - 0.5) * 10 + (fine - 0.5) * 8
+                if seam:
+                    base = 126 + tone
+                else:
+                    base = (172 + tone
+                            + (_hash01((x + offset) // block, row, seed) - 0.5) * 14)
+                    if y % course < 6 or sx < 6:
+                        base += 5
+                color = (base + 3, base + 1, base - 4)
+            elif kind == "brick":
+                course, block = 24, 52
+                row = y // course
+                offset = block // 2 if row % 2 else 0
+                sx = (x + offset) % block
+                mortar = y % course < 3 or sx < 3
+                if mortar:
+                    base = 201 + (fine - 0.5) * 8
+                    color = (base, base - 6, base - 18)
+                else:
+                    base = (158 + (coarse - 0.5) * 14 + (fine - 0.5) * 10
+                            + (_hash01((x + offset) // block, row, seed) - 0.5) * 26)
+                    color = (base + 16, base - 46, base - 58)
+            elif kind == "roof":
+                course, block = 22, 38
+                row = y // course
+                offset = block // 2 if row % 2 else 0
+                sx = (x + offset) % block
+                edge = y % course < 2 or sx < 2
+                if edge:
+                    base = 132 + (fine - 0.5) * 8
+                else:
+                    base = (98 + (coarse - 0.5) * 12 + (fine - 0.5) * 8
+                            + (_hash01((x + offset) // block, row, seed) - 0.5) * 18)
+                color = (base + 20, base - 3, base - 11)
             elif kind == "glass":
-                reflection = 26 if (x + y * 2) % 71 < 3 else 0
-                color = (77 + reflection, 124 + reflection, 135 + reflection)
+                gradient = y / height
+                reflection = 26 if (x * 3 + y) % 97 < 2 else 0
+                color = (73 + 28 * (1 - gradient) + reflection,
+                         109 + 34 * (1 - gradient) + reflection,
+                         124 + 36 * (1 - gradient) + reflection)
             elif kind == "wood":
-                grain = 14 if y % 19 < 2 else 0
-                color = (151 - grain, 111 - grain, 72 - grain)
+                ring = math.sin(x * 0.23 + coarse * 6.5) * 9
+                grain = -10 if (x + y * 5) % 41 < 2 else 0
+                base = 150 + ring + (fine - 0.5) * 12 + grain
+                color = (base, base - 38, base - 74)
             elif kind == "grass":
-                color = (122 + noise, 151 + noise, 103 + noise)
+                blade = (fine - 0.5) * 26 + (mid - 0.5) * 20
+                base = 112 + coarse * 26 + blade
+                color = (base * 0.76, base, base * 0.64)
             else:
-                color = (233 + noise, 226 + noise, 210 + noise)
-            pixels.extend(max(0, min(255, component + noise)) for component in color)
+                base = 232 + (coarse - 0.5) * 10 + (mid - 0.5) * 5 + (fine - 0.5) * 5
+                color = (base, base - 5, base - 16)
+            pixels.extend(_clamp_channel(component) for component in color)
             pixels.append(255)
     scanlines = b"".join(b"\x00" + pixels[y * width * 4:(y + 1) * width * 4]
                          for y in range(height))
     header = struct.pack(">2I5B", width, height, 8, 6, 0, 0, 0)
     return (b"\x89PNG\r\n\x1a\n" + png_chunk(b"IHDR", header)
             + png_chunk(b"IDAT", zlib.compress(scanlines, 7)) + png_chunk(b"IEND", b""))
-
 
 def write_glb(path, geometry, collision=False, include_textures=True, materials=None):
     binary = bytearray()
@@ -774,6 +839,7 @@ def write_glb(path, geometry, collision=False, include_textures=True, materials=
     textures = []
     samplers = []
     material_indices = {}
+    texture_indices = {}
 
     def add_blob(data, target=None):
         while len(binary) % 4:
@@ -812,18 +878,23 @@ def write_glb(path, geometry, collision=False, include_textures=True, materials=
             if "emissive" in spec:
                 material["emissiveFactor"] = spec["emissive"]
             if include_textures and "texture" in spec:
-                material["pbrMetallicRoughness"]["baseColorTexture"] = {"index": len(textures)}
-                if not samplers:
-                    samplers.append({"magFilter": 9729, "minFilter": 9987,
-                                     "wrapS": 10497, "wrapT": 10497})
-                image_data = texture_png(spec["texture"], 1000 + index)
-                image_view = add_blob(image_data)
-                images.append({
-                    "name": f"{name}_texture",
-                    "bufferView": image_view,
-                    "mimeType": "image/png"
-                })
-                textures.append({"sampler": 0, "source": len(images) - 1})
+                kind = spec["texture"]
+                if kind not in texture_indices:
+                    if not samplers:
+                        samplers.append({"magFilter": 9729, "minFilter": 9987,
+                                         "wrapS": 10497, "wrapT": 10497})
+                    image_data = texture_png(kind, 1000 + len(texture_indices))
+                    image_view = add_blob(image_data)
+                    images.append({
+                        "name": f"{kind}_texture",
+                        "bufferView": image_view,
+                        "mimeType": "image/png"
+                    })
+                    textures.append({"sampler": 0, "source": len(images) - 1})
+                    texture_indices[kind] = len(textures) - 1
+                material["pbrMetallicRoughness"]["baseColorTexture"] = {
+                    "index": texture_indices[kind]
+                }
             material_indices[name] = index
             gltf_materials.append(material)
 

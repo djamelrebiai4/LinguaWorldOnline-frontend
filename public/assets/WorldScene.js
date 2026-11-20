@@ -88,7 +88,7 @@ const LEVEL_NAMES = {
 };
 
 const LEVEL_STARTS = {
-  1: { x: 30, y: 0, z: 95 },
+  1: { x: 39, y: 0, z: 118 },
   2: { x: 0, y: 0, z: 0 },
   3: { x: 0, y: 0, z: 0 },
   4: { x: 0, y: 0, z: 0 },
@@ -1043,33 +1043,69 @@ function LevelWorld({ level, onPositionsReady, isPaused }) {
   return null;
 }
 
+function RendererTuning() {
+  const gl = useThree((state) => state.gl);
+  React.useEffect(() => {
+    gl.toneMapping = 4;
+    gl.toneMappingExposure = 1.06;
+    gl.outputColorSpace = 'srgb';
+    gl.shadowMap.enabled = true;
+    gl.shadowMap.type = 2;
+  }, [gl]);
+  return null;
+}
+
+function CitySky() {
+  return h(React.Fragment, null,
+    h('color', { attach: 'background', args: ['#9dc6e8'] }),
+    h('mesh', { position: [-260, 300, 220], renderOrder: -2 },
+      h('sphereGeometry', { args: [42, 24, 16] }),
+      h('meshBasicMaterial', {
+        color: '#ffe8ae', transparent: true, opacity: 0.16,
+        depthWrite: false, fog: false, toneMapped: false
+      })),
+    h('mesh', { position: [-260, 300, 220], renderOrder: -1 },
+      h('sphereGeometry', { args: [16, 24, 16] }),
+      h('meshBasicMaterial', { color: '#fff6dc', fog: false, toneMapped: false }))
+  );
+}
+
 function CityWorld({ onPositionsReady, isPaused }) {
   const [worldProfile, setWorldProfile] = React.useState(null);
   const spawnPoint = React.useMemo(readCitySpawn, []);
   const fogNear = worldProfile?.fog_near_m ?? 260;
   const fogFar = worldProfile?.fog_far_m ?? 760;
   return h(React.Fragment, null,
-    h('fog', { attach: 'fog', args: ['#c5d0cf', fogNear, fogFar] }),
-    h('ambientLight', { intensity: 0.25, color: 0xffffff }),
+    h(RendererTuning),
+    h(CitySky),
+    h('fog', { attach: 'fog', args: ['#c3d2d2', fogNear, fogFar] }),
+    h('ambientLight', { intensity: 0.28, color: 0xffffff }),
     h('hemisphereLight', {
-      skyColor: 0xa9d5ea,
-      groundColor: 0x827464,
-      intensity: 0.45
+      skyColor: 0xb7d9ec,
+      groundColor: 0x8b7b68,
+      intensity: 0.55
     }),
     h('directionalLight', {
-      position: [-80, 150, 90],
-      intensity: 1.7,
-      color: 0xffedcf,
+      position: [-110, 170, 70],
+      intensity: 2.1,
+      color: 0xffe8c2,
       castShadow: !LOW_POWER_RENDERING,
-      'shadow-mapSize-width': 1024,
-      'shadow-mapSize-height': 1024,
+      'shadow-mapSize-width': 2048,
+      'shadow-mapSize-height': 2048,
       'shadow-camera-near': 1,
       'shadow-camera-far': 760,
       'shadow-camera-left': -320,
       'shadow-camera-right': 320,
       'shadow-camera-top': 380,
       'shadow-camera-bottom': -380,
-      'shadow-bias': -0.00015
+      'shadow-bias': -0.0002,
+      'shadow-normalBias': 0.035,
+      'shadow-radius': 3
+    }),
+    h('directionalLight', {
+      position: [130, 70, -120],
+      intensity: 0.22,
+      color: 0xa8c8e4
     }),
     useWorldModel(
       '/Grounds/LinguaCity.glb',
